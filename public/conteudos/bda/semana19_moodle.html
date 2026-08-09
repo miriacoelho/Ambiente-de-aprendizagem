@@ -1,0 +1,492 @@
+<div style="font-family:'Segoe UI', Arial, sans-serif; max-width:820px; margin:auto; line-height:1.75; color:#111827;">
+
+    <!-- Cabeçalho -->
+    <div style="border:2px solid #e5e7eb;background:#f9fafc; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 6px rgba(0,0,0,0.05); border-left:2px solid #1e3a8a;">
+
+        <div style="display:flex; align-items:flex-start; gap:12px;">
+
+            <div style="min-width:44px; height:44px; border-radius:10px; background:#eef2ff; display:flex; align-items:center; justify-content:center; font-weight:800; color:#3730a3;">
+                SQL
+            </div>
+
+            <div style="flex:1;">
+
+                <div style="font-size:22px; font-weight:900; color:#1e3a8a; margin:0 0 6px 0;">
+                    Triggers, Functions e Procedures
+                </div>
+
+                <div style="font-size:14px; color:#6b7280;">
+                    Profª Miriã Corrêa
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- BOAS VINDAS -->
+    <div style="border:2px solid #e5e7eb;background:#f9fafc; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 6px rgba(0,0,0,0.05); border-left:2px solid #1e3a8a;">
+
+        <details>
+
+            <summary style="list-style:none;cursor:pointer; font-weight:700; color:#1e3a8a; font-size:16px;">
+
+                <h2 style="margin-top:0; color:#1e3a8a;">
+                    ⚙️ Rotinas e Gatilhos em Banco de Dados
+                </h2>
+
+            </summary>
+
+            <p style="text-align:justify;">
+
+                Nesta aula estudaremos recursos importantes para automatizar ações e organizar regras de negócio diretamente no banco de dados:
+                <strong>functions</strong>, <strong>stored procedures</strong> e <strong>triggers</strong>.
+
+            </p>
+
+            <div style="background:#eef2ff; padding:12px; border-radius:10px; margin-top:12px;">
+
+                💡 <strong>Você vai compreender que:</strong><br><br>
+
+                🔹 Functions e procedures são rotinas armazenadas no banco<br>
+                🔹 Functions sempre retornam valores<br>
+                🔹 Procedures executam comandos e podem receber parâmetros<br>
+                🔹 Triggers são gatilhos disparados automaticamente por eventos<br>
+                🔹 NEW e OLD permitem acessar registros em operações com triggers<br>
+                🔹 Essas estruturas ajudam a automatizar regras e manter a consistência dos dados
+
+            </div>
+
+            <div style="border-top:1px solid #e5e7eb; margin-top:15px; padding-top:15px;"></div>
+
+            <p style="text-align:center;">
+                <img src="" alt="Triggers, Functions e Procedures" width="1536" height="1024" style="border-radius:12px;" class="img-fluid atto_image_button_text-bottom">
+            </p>
+
+            <div style="border-top:1px solid #e5e7eb; margin-top:15px; padding-top:15px;"></div>
+
+            <div style="background:#eef2ff; border:1px solid #c7d2fe; padding:14px 16px; border-radius:12px; margin-bottom:20px; font-size:18px; color:#1e3a8a;">
+
+                <strong>ℹ️ Navegação rápida:</strong>
+                Utilize os cards ⚙️ 📚 🧠 🎥 📝 🔗 🧩 🎯 para acessar os conteúdos da semana.
+
+            </div>
+
+        </details>
+
+    </div>
+
+    <!-- CONTEUDO -->
+    <div style="border:2px solid #e5e7eb;background:#f9fafc; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 6px rgba(0,0,0,0.05); border-left:2px solid #1e3a8a;">
+
+        <details>
+
+            <summary style="list-style:none;cursor:pointer; font-weight:700; color:#1e3a8a; font-size:16px;">
+
+                <h3 style="margin-top:0; color:#1e3a8a;">
+                    📚 Conteúdo da Semana
+                </h3>
+
+            </summary>
+
+            <dl style="margin-top:10px;">
+
+                <dd style="font-weight:700;">📌 Functions e Stored Procedures</dd>
+                <dd>📌 Conceito de rotinas armazenadas</dd>
+                <dd>📌 Diferenças entre functions e procedures</dd>
+                <dd>📌 Sintaxe de criação de functions</dd>
+                <dd>📌 Parâmetros e tipo de retorno</dd>
+                <dd>📌 Uso de functions como parte de expressões</dd>
+                <dd>📌 Sintaxe de stored procedures</dd>
+                <dd>📌 Parâmetros IN, OUT e IN OUT</dd>
+                <dd>📌 Exemplos práticos com cálculo de média e consulta de dados</dd>
+
+                <dd style="margin-top:10px; font-weight:700;">⚙️ Triggers</dd>
+                <dd>📌 Conceito de trigger ou gatilho</dd>
+                <dd>📌 Eventos que disparam triggers: INSERT, UPDATE e DELETE</dd>
+                <dd>📌 Momento de execução: BEFORE e AFTER</dd>
+                <dd>📌 Pontos positivos e negativos do uso de triggers</dd>
+                <dd>📌 Sintaxe de criação de triggers</dd>
+                <dd>📌 Registros NEW e OLD</dd>
+                <dd>📌 Automatização de estoque em operações de venda</dd>
+                <dd>📌 Criação de tabela de LOG para auditoria</dd>
+
+            </dl>
+
+        </details>
+
+    </div>
+
+    <!-- COMO ESTUDAR -->
+    <div style="border:2px solid #e5e7eb;background:#f9fafc; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 6px rgba(0,0,0,0.05); border-left:2px solid #1e3a8a;">
+
+        <details>
+
+            <summary style="list-style:none;cursor:pointer; font-weight:700; color:#1e3a8a; font-size:16px;">
+
+                <h3 style="margin-top:0; color:#1e3a8a;">
+                    🧠 Como estudar nesta semana
+                </h3>
+
+            </summary>
+
+            <ul>
+
+                <li>Revise a diferença entre function, procedure e trigger.</li>
+                <li>Observe que functions retornam valores e podem ser usadas em expressões.</li>
+                <li>Pratique procedures com parâmetros IN, OUT e IN OUT.</li>
+                <li>Analise quando uma trigger deve ser BEFORE ou AFTER.</li>
+                <li>Estude o uso dos registros NEW e OLD em operações de inserção e exclusão.</li>
+                <li>Execute os exemplos no MySQL para observar o comportamento automático das triggers.</li>
+
+            </ul>
+
+            <div style="margin-top:18px; background:#1e3a8a; color:#ffffff; padding:14px; border-radius:12px;">
+
+                💡 Pergunta guia:
+                <em>“Como automatizar regras de negócio diretamente dentro do banco de dados?”</em>
+
+            </div>
+
+        </details>
+
+    </div>
+    <!-- VIDEOAULAS -->
+    <div style="border:2px solid #e5e7eb;background:#f9fafc; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 6px rgba(0,0,0,0.05); border-left:2px solid #1e3a8a;">
+
+        <details>
+
+            <summary style="list-style:none;cursor:pointer; font-weight:700; color:#1e3a8a; font-size:16px;">
+
+                <h3 style="margin-top:0; color:#1e3a8a;">
+                    🎥 Videos
+                </h3>
+
+            </summary>
+
+            <p style="text-align:justify; color:#374151;">
+
+                Assista às videoaulas abaixo para reforçar os conceitos apresentados
+                sobre <strong>Functions</strong>,
+                <strong>Stored Procedures</strong> e
+                <strong>Triggers</strong>.
+
+            </p>
+
+
+            <!-- Vídeo 1 -->
+            <a href="https://www.youtube.com/watch?v=re45HjehevU" target="_blank" style="display:block;
+                  text-decoration:none;
+                  border:1px solid #e5e7eb;
+                  border-radius:12px;
+                  padding:12px;
+                  margin:10px 0;
+                  background:#ffffff;">
+
+                <div style="display:flex; align-items:center; gap:10px;">
+
+                    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" width="28">
+
+                    <div style="flex:1;">
+
+                        <div style="font-weight:900;
+                                color:#0f172a;
+                                font-size:14px;">
+                            Triggers
+                        </div>
+
+                        <div style="color:#6b7280;
+                                font-size:13px;">
+                            Aplicações práticas com Triggers e automação de regras de negócio.
+                        </div>
+
+                    </div>
+
+                    <div style="font-size:18px;
+                            color:#1e3a8a;
+                            font-weight:900;">
+                        ›
+                    </div>
+
+                </div>
+
+            </a>
+            <!-- Vídeo 2 -->
+            <a href="https://www.youtube.com/watch?v=xv6uKYACyLU&amp;t=6s" target="_blank" style="display:block;
+                  text-decoration:none;
+                  border:1px solid #e5e7eb;
+                  border-radius:12px;
+                  padding:12px;
+                  margin:10px 0;
+                  background:#ffffff;">
+
+                <div style="display:flex; align-items:center; gap:10px;">
+
+                    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" width="28">
+
+                    <div style="flex:1;">
+
+                        <div style="font-weight:900;
+                                color:#0f172a;
+                                font-size:14px;">
+                            Functions e Procedures
+                        </div>
+
+                        <div style="color:#6b7280;
+                                font-size:13px;">
+                            Introdução às Functions e Procedures.
+                        </div>
+
+                    </div>
+
+                    <div style="font-size:18px;
+                            color:#1e3a8a;
+                            font-weight:900;">
+                        ›
+                    </div>
+
+                </div>
+
+            </a>
+
+        </details>
+
+    </div>
+    <!-- MATERIAIS -->
+    <div style="border:2px solid #e5e7eb;background:#f9fafc; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 6px rgba(0,0,0,0.05); border-left:2px solid #1e3a8a;">
+
+        <details>
+
+            <summary style="list-style:none;cursor:pointer; font-weight:700; color:#1e3a8a; font-size:16px;">
+
+                <h3 style="margin-top:0; color:#1e3a8a;">
+                    📝 Materiais da semana
+                </h3>
+
+            </summary>
+
+           <!-- Material 1-->
+            <a href="https://viannavirtual.com.br/ead/draftfile.php/26770/user/draft/909305772/Funcoes_e_Procedimentos.pdf" target="_blank" style="text-decoration:none;">
+
+                <div style="display:flex; border:1px solid #e5e7eb; border-radius:12px; padding:12px; margin:10px 0; background:#ffffff; align-items:center; gap:10px;">
+
+                    <img src="https://uxwing.com/wp-content/themes/uxwing/download/file-and-folder-type/pdf-icon.png" width="26">
+
+                    <div style="flex:1;">
+
+                        <div style="font-weight:900; color:#0f172a; font-size:14px;">
+                            Functions e Stored Procedures
+                        </div>
+
+                        <div style="color:#6b7280; font-size:13px;">
+                            Material teórico com conceitos, sintaxe e exemplos.
+                        </div>
+
+                    </div>
+
+                    <div style="font-size:18px; color:#1e3a8a; font-weight:900;">›</div>
+
+                </div>
+
+            </a>
+			<!-- Material 2-->
+            <a href="https://viannavirtual.com.br/ead/draftfile.php/26770/user/draft/909305772/Triggers.pdf" target="_blank" style="text-decoration:none;">
+
+                <div style="display:flex; border:1px solid #e5e7eb; border-radius:12px; padding:12px; margin:10px 0; background:#ffffff; align-items:center; gap:10px;">
+
+                    <img src="https://uxwing.com/wp-content/themes/uxwing/download/file-and-folder-type/pdf-icon.png" width="26">
+
+                    <div style="flex:1;">
+
+                        <div style="font-weight:900; color:#0f172a; font-size:14px;">
+                            Triggers
+                        </div>
+
+                        <div style="color:#6b7280; font-size:13px;">
+                            Material teórico sobre gatilhos, NEW, OLD e auditoria.
+                        </div>
+
+                    </div>
+
+                    <div style="font-size:18px; color:#1e3a8a; font-weight:900;">›</div>
+
+                </div>
+
+            </a>
+
+        </details>
+
+    </div>
+
+    <!-- LINKS -->
+    <div style="border:2px solid #e5e7eb;background:#f9fafc; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 6px rgba(0,0,0,0.05); border-left:2px solid #1e3a8a;">
+
+        <details>
+
+            <summary style="list-style:none;cursor:pointer; font-weight:700; color:#1e3a8a; font-size:16px;">
+
+                <h3 style="margin-top:0; color:#1e3a8a;">
+                    🔗 Links úteis
+                </h3>
+
+            </summary>
+
+            <a href="https://dev.mysql.com/doc/refman/8.0/en/create-procedure.html" style="display:block; text-decoration:none; border:1px solid #e5e7eb; border-radius:12px; padding:12px; margin:10px 0; background:#ffffff;" target="_blank">
+
+                <div style="display:flex; align-items:center; gap:10px;">
+
+                    <img src="https://cdn-icons-png.flaticon.com/512/4649/4649581.png" width="26">
+
+                    <div style="flex:1;">
+
+                        <div style="font-weight:900; color:#0f172a; font-size:14px;">
+                            CREATE PROCEDURE e CREATE FUNCTION
+                        </div>
+
+                        <div style="color:#6b7280; font-size:13px;">
+                            Documentação oficial do MySQL sobre criação de rotinas armazenadas.
+                        </div>
+
+                    </div>
+
+                    <div style="font-size:18px; color:#1e3a8a; font-weight:900;">›</div>
+
+                </div>
+
+            </a>
+
+            <a href="https://dev.mysql.com/doc/refman/8.0/en/create-trigger.html" style="display:block; text-decoration:none; border:1px solid #e5e7eb; border-radius:12px; padding:12px; margin:10px 0; background:#ffffff;" target="_blank">
+
+                <div style="display:flex; align-items:center; gap:10px;">
+
+                    <img src="https://cdn-icons-png.flaticon.com/512/4649/4649581.png" width="26">
+
+                    <div style="flex:1;">
+
+                        <div style="font-weight:900; color:#0f172a; font-size:14px;">
+                            CREATE TRIGGER
+                        </div>
+
+                        <div style="color:#6b7280; font-size:13px;">
+                            Documentação oficial do MySQL sobre criação de triggers.
+                        </div>
+
+                    </div>
+
+                    <div style="font-size:18px; color:#1e3a8a; font-weight:900;">›</div>
+
+                </div>
+
+            </a>
+
+        </details>
+
+    </div>
+
+    <!-- ATIVIDADE -->
+    <div style="border:2px solid #e5e7eb;background:#f9fafc; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 6px rgba(0,0,0,0.05); border-left:2px solid #1e3a8a;">
+
+        <details>
+
+            <summary style="list-style:none;cursor:pointer; font-weight:700; color:#1e3a8a; font-size:16px;">
+
+                <h3 style="margin-top:0; color:#1e3a8a;">
+                    🧩 Atividade da semana
+                </h3>
+
+            </summary>
+
+            <p style="margin:0 0 12px 0; text-align:justify; color:#374151;">
+
+                Desenvolva uma atividade prática envolvendo rotinas armazenadas e gatilhos. Crie uma function para realizar um cálculo, uma procedure para consultar ou manipular dados e triggers para automatizar alterações no banco.
+
+            </p>
+
+            <div style="background:#eef2ff; padding:14px; border-radius:12px; margin-bottom:15px;">
+
+                ✅ <strong>Orientações da atividade:</strong><br><br>
+
+                🔹 Criar uma function que retorne um valor calculado<br>
+                🔹 Criar uma stored procedure com parâmetro de entrada<br>
+                🔹 Criar uma trigger AFTER INSERT para atualizar automaticamente uma tabela<br>
+                🔹 Criar uma trigger AFTER DELETE para devolver ou registrar informações<br>
+                🔹 Criar uma tabela de LOG para registrar operações de INSERT, UPDATE e DELETE<br>
+                🔹 Testar os comandos e verificar os resultados com SELECT
+
+            </div>
+
+            <a href="https://docs.google.com/document/d/1IkUgnxYIf4XlE_-vrauYZUyWCKHHbGF2pSrkXY_tofw/edit?usp=sharing" target="_blank" rel="noopener" style="
+                display:inline-flex;
+                align-items:center;
+                gap:10px;
+                text-decoration:none;
+                background:linear-gradient(135deg, #1e3a8a, #172554);
+                color:#ffffff;
+                font-weight:900;
+                padding:10px 14px;
+                border-radius:14px;
+                font-size:17px;
+                box-shadow:0 6px 18px rgba(30, 58, 138, 0.5);
+                letter-spacing:0.5px;
+            ">
+
+                📝 Exercício
+
+            </a>
+
+            <a href="#" target="_blank" rel="noopener" style="
+                display:inline-flex;
+                align-items:center;
+                gap:10px;
+                text-decoration:none;
+                background:linear-gradient(135deg, #06402b, #26503a);
+                color:#ffffff;
+                font-weight:900;
+                padding:10px 14px;
+                border-radius:14px;
+                font-size:17px;
+                box-shadow:0 6px 18px rgba(30, 58, 138, 0.5);
+                letter-spacing:0.5px;
+            ">
+
+                ✅ Resposta
+
+            </a>
+
+        </details>
+
+    </div>
+
+    <!-- ENCERRAMENTO -->
+    <div style="border:2px solid #e5e7eb;background:#f9fafc; padding:22px; border-radius:14px; margin-bottom:20px; box-shadow:0 3px 8px rgba(0,0,0,0.06); border-left:4px solid #1e3a8a;">
+
+        <details>
+
+            <summary style="list-style:none;cursor:pointer; font-weight:800; color:#1e3a8a; font-size:17px;">
+
+                <h3 style="margin-top:0; color:#1e3a8a;">
+                    🎯 Encerramento
+                </h3>
+
+            </summary>
+
+            <div style="margin-top:15px; padding:14px; border-radius:12px; background:#ffffff; border:1px solid #e5e7eb;">
+
+                <p style="text-align: justify;">
+
+                    Functions, procedures e triggers são recursos importantes para tornar o banco de dados mais inteligente, organizado e automatizado. Com eles, é possível reaproveitar comandos, aplicar regras de negócio, atualizar informações automaticamente e registrar operações importantes para auditoria.
+
+                </p>
+
+            </div>
+
+            <p style="text-align:center;">
+                <img src="https://media.giphy.com/media/3oKIPEqDGUULpEU0aQ/giphy.gif" alt="Automação em Banco de Dados" width="240" style="border-radius:12px;">
+            </p>
+
+        </details>
+
+    </div>
+
+</div>

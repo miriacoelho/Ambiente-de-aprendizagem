@@ -1,0 +1,469 @@
+<div style="font-family:'Segoe UI', Arial, sans-serif; max-width:820px; margin:auto; line-height:1.75; color:#111827;">
+
+    <!-- Cabeçalho -->
+    <div style="border:2px solid #e5e7eb;background:#f9fafc; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 6px rgba(0,0,0,0.05); border-left:2px solid #1e3a8a;">
+
+        <div style="display:flex; align-items:flex-start; gap:12px;">
+
+            <div style="min-width:44px; height:44px; border-radius:10px; background:#eef2ff; display:flex; align-items:center; justify-content:center; font-weight:800; color:#3730a3;">
+                SQL
+            </div>
+
+            <div style="flex:1;">
+
+                <div style="font-size:22px; font-weight:900; color:#1e3a8a; margin:0 0 6px 0;">
+                    Revisão para a Prova Semestral
+                </div>
+
+                <div style="font-size:14px; color:#6b7280;">
+                    Profª Miriã Corrêa
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- BOAS VINDAS -->
+    <div style="border:2px solid #e5e7eb;background:#f9fafc; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 6px rgba(0,0,0,0.05); border-left:2px solid #1e3a8a;">
+
+        <details open="">
+
+            <summary style="list-style:none;cursor:pointer; font-weight:700; color:#1e3a8a; font-size:16px;">
+
+                <h2 style="margin-top:0; color:#1e3a8a;">
+                    📝 Revisão para a Prova Semestral
+                </h2>
+
+            </summary>
+
+            <p style="text-align:justify;">
+
+                Nesta revisão, vamos retomar os principais conteúdos que serão cobrados na prova,
+                com foco na construção de consultas SQL, combinação de dados entre tabelas,
+                geração de resultados resumidos, criação de visões e controle de segurança
+                em banco de dados.
+
+            </p>
+
+            <div style="background:#eef2ff; padding:12px; border-radius:10px; margin-top:12px;">
+
+                💡 <strong>Você deverá compreender que:</strong><br><br>
+
+                🔹 A junção interna retorna apenas os registros correspondentes entre tabelas<br>
+                🔹 A junção externa permite exibir registros mesmo quando não há correspondência<br>
+                🔹 As funções de agregação resumem dados por meio de cálculos<br>
+                🔹 As visões permitem salvar consultas como estruturas reutilizáveis<br>
+                🔹 A segurança em banco de dados controla acessos, usuários e permissões<br>
+                🔹 Consultas bem construídas ajudam na análise e proteção das informações
+
+            </div>
+
+            <div style="border-top:1px solid #e5e7eb; margin-top:15px; padding-top:15px;"></div>
+
+            <p style="text-align:center;">
+                <img src="https://viannavirtual.com.br/ead/draftfile.php/26770/user/draft/894467846/semana18.png" alt="Revisão de Banco de Dados" width="1536" height="1024" style="border-radius:12px;" class="img-fluid atto_image_button_text-bottom">
+            </p>
+
+            <div style="border-top:1px solid #e5e7eb; margin-top:15px; padding-top:15px;"></div>
+
+            <div style="background:#eef2ff; border:1px solid #c7d2fe; padding:14px 16px; border-radius:12px; margin-bottom:20px; font-size:18px; color:#1e3a8a;">
+
+                <strong>ℹ️ Navegação rápida:</strong>
+                Utilize os cards 📝 📚 🧠 💻 🔗 🧩 🎯 para acessar os conteúdos da revisão.
+
+            </div>
+
+        </details>
+
+    </div>
+
+    <!-- CONTEUDO -->
+    <div style="border:2px solid #e5e7eb;background:#f9fafc; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 6px rgba(0,0,0,0.05); border-left:2px solid #1e3a8a;">
+
+        <details>
+
+            <summary style="list-style:none;cursor:pointer; font-weight:700; color:#1e3a8a; font-size:16px;">
+
+                <h3 style="margin-top:0; color:#1e3a8a;">
+                    📚 Conteúdo
+                </h3>
+
+            </summary>
+
+            <dl style="margin-top:10px;">
+
+                <dd style="margin-top:10px; font-weight:700;">
+                    🔗 SQL: Junção Interna
+                </dd>
+
+                <dd>📌 Conceito de junção entre tabelas</dd>
+                <dd>📌 Uso do INNER JOIN</dd>
+                <dd>📌 Relação entre chave primária e chave estrangeira</dd>
+                <dd>📌 Retorno apenas dos registros que possuem correspondência</dd>
+                <dd>📌 Escrita correta da condição ON</dd>
+
+                <dd style="margin-top:10px; font-weight:700;">
+                    🔄 SQL: Junção Externa
+                </dd>
+
+                <dd>📌 Conceito de junção externa</dd>
+                <dd>📌 Uso do LEFT JOIN</dd>
+                <dd>📌 Uso do RIGHT JOIN</dd>
+                <dd>📌 Exibição de registros sem correspondência</dd>
+                <dd>📌 Interpretação de valores NULL em junções externas</dd>
+
+                <dd style="margin-top:10px; font-weight:700;">
+                    📊 Funções de Agregação
+                </dd>
+
+                <dd>📌 COUNT para contar registros</dd>
+                <dd>📌 SUM para somar valores</dd>
+                <dd>📌 AVG para calcular média</dd>
+                <dd>📌 MIN para encontrar o menor valor</dd>
+                <dd>📌 MAX para encontrar o maior valor</dd>
+                <dd>📌 Uso do GROUP BY para agrupar resultados</dd>
+                <dd>📌 Uso do HAVING para filtrar grupos</dd>
+
+                <dd style="margin-top:10px; font-weight:700;">
+                    👁️ Visões
+                </dd>
+
+                <dd>📌 Conceito de VIEW</dd>
+                <dd>📌 Criação de visões com CREATE VIEW</dd>
+                <dd>📌 Consulta de dados por meio de uma visão</dd>
+                <dd>📌 Alteração ou substituição de visões</dd>
+                <dd>📌 Exclusão de visões com DROP VIEW</dd>
+                <dd>📌 Uso de visões para simplificar consultas e proteger dados</dd>
+
+                <dd style="margin-top:10px; font-weight:700;">
+                    🔐 Segurança em Banco de Dados
+                </dd>
+
+                <dd>📌 Conceito de segurança em banco de dados</dd>
+                <dd>📌 Criação de usuários</dd>
+                <dd>📌 Controle de permissões</dd>
+                <dd>📌 Uso do GRANT para conceder privilégios</dd>
+                <dd>📌 Uso do REVOKE para remover privilégios</dd>
+                <dd>📌 Importância da proteção dos dados</dd>
+
+            </dl>
+
+        </details>
+
+    </div>
+
+    <!-- COMO ESTUDAR -->
+    <div style="border:2px solid #e5e7eb;background:#f9fafc; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 6px rgba(0,0,0,0.05); border-left:2px solid #1e3a8a;">
+
+        <details>
+
+            <summary style="list-style:none;cursor:pointer; font-weight:700; color:#1e3a8a; font-size:16px;">
+
+                <h3 style="margin-top:0; color:#1e3a8a;">
+                    🧠 Como estudar nesta semana
+                </h3>
+
+            </summary>
+
+            <ul>
+
+                <li>Revise a diferença entre INNER JOIN, LEFT JOIN e RIGHT JOIN.</li>
+                <li>Pratique consultas envolvendo duas ou mais tabelas.</li>
+                <li>Observe sempre quais campos relacionam as tabelas.</li>
+                <li>Resolva exercícios usando COUNT, SUM, AVG, MIN e MAX.</li>
+                <li>Treine o uso de GROUP BY e HAVING em consultas com agrupamento.</li>
+                <li>Revise a criação e utilização de visões.</li>
+                <li>Pratique comandos de segurança como CREATE USER, GRANT e REVOKE.</li>
+                <li>Leia atentamente os enunciados para identificar qual comando SQL deve ser usado.</li>
+
+            </ul>
+
+            <div style="margin-top:18px; background:#1e3a8a; color:#ffffff; padding:14px; border-radius:12px;">
+
+                💡 Pergunta guia:
+                <em>“Como consultar, resumir, organizar e proteger dados em um banco de dados?”</em>
+
+            </div>
+
+        </details>
+
+    </div>
+
+    <!-- MATERIAIS -->
+    <div style="border:2px solid #e5e7eb;background:#f9fafc; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 6px rgba(0,0,0,0.05); border-left:2px solid #1e3a8a;">
+
+        <details>
+
+            <summary style="list-style:none;cursor:pointer; font-weight:700; color:#1e3a8a; font-size:16px;">
+
+                <h3 style="margin-top:0; color:#1e3a8a;">
+                    📝 Materiais da semana
+                </h3>
+
+            </summary>
+
+            <!-- Material -->
+            <a href="https://viannavirtual.com.br/ead/draftfile.php/26770/user/draft/894467846/slides.rar" target="_blank" style="text-decoration:none;">
+
+                <div style="display:flex; border:1px solid #e5e7eb; border-radius:12px; padding:12px; margin:10px 0; background:#ffffff; align-items:center; gap:10px;">
+
+                    <img src="https://uxwing.com/wp-content/themes/uxwing/download/file-and-folder-type/pdf-icon.png" width="26">
+
+                    <div style="flex:1;">
+
+                        <div style="font-weight:900; color:#0f172a; font-size:14px;">
+                            Slides - Conteúdo prova
+                        </div>
+
+                        <div style="color:#6b7280; font-size:13px;">
+                            Material para prova.
+                        </div>
+
+                    </div>
+
+                    <div style="font-size:18px; color:#1e3a8a; font-weight:900;">›</div>
+
+                </div>
+
+            </a>
+        </details>
+
+    </div>
+
+    <!-- LINKS -->
+    <div style="border:2px solid #e5e7eb;background:#f9fafc; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 6px rgba(0,0,0,0.05); border-left:2px solid #1e3a8a;">
+
+        <details>
+
+            <summary style="list-style:none;cursor:pointer; font-weight:700; color:#1e3a8a; font-size:16px;">
+
+                <h3 style="margin-top:0; color:#1e3a8a;">
+                    🔗 Links úteis
+                </h3>
+
+            </summary>
+
+            <a href="https://dev.mysql.com/doc/refman/8.0/en/join.html" style="display:block; text-decoration:none; border:1px solid #e5e7eb; border-radius:12px; padding:12px; margin:10px 0; background:#ffffff;" target="_blank">
+
+                <div style="display:flex; align-items:center; gap:10px;">
+
+                    <img src="https://cdn-icons-png.flaticon.com/512/4649/4649581.png" width="26">
+
+                    <div style="flex:1;">
+
+                        <div style="font-weight:900; color:#0f172a; font-size:14px;">
+                            Junções no MySQL
+                        </div>
+
+                        <div style="color:#6b7280; font-size:13px;">
+                            Documentação oficial sobre consultas com JOIN.
+                        </div>
+
+                    </div>
+
+                    <div style="font-size:18px; color:#1e3a8a; font-weight:900;">›</div>
+
+                </div>
+
+            </a>
+
+            <a href="https://dev.mysql.com/doc/refman/8.0/en/aggregate-functions.html" style="display:block; text-decoration:none; border:1px solid #e5e7eb; border-radius:12px; padding:12px; margin:10px 0; background:#ffffff;" target="_blank">
+
+                <div style="display:flex; align-items:center; gap:10px;">
+
+                    <img src="https://cdn-icons-png.flaticon.com/512/4649/4649581.png" width="26">
+
+                    <div style="flex:1;">
+
+                        <div style="font-weight:900; color:#0f172a; font-size:14px;">
+                            Funções de Agregação
+                        </div>
+
+                        <div style="color:#6b7280; font-size:13px;">
+                            Documentação oficial sobre COUNT, SUM, AVG, MIN e MAX.
+                        </div>
+
+                    </div>
+
+                    <div style="font-size:18px; color:#1e3a8a; font-weight:900;">›</div>
+
+                </div>
+
+            </a>
+
+            <a href="https://dev.mysql.com/doc/refman/8.0/en/create-view.html" style="display:block; text-decoration:none; border:1px solid #e5e7eb; border-radius:12px; padding:12px; margin:10px 0; background:#ffffff;" target="_blank">
+
+                <div style="display:flex; align-items:center; gap:10px;">
+
+                    <img src="https://cdn-icons-png.flaticon.com/512/4649/4649581.png" width="26">
+
+                    <div style="flex:1;">
+
+                        <div style="font-weight:900; color:#0f172a; font-size:14px;">
+                            CREATE VIEW
+                        </div>
+
+                        <div style="color:#6b7280; font-size:13px;">
+                            Documentação oficial sobre criação de visões.
+                        </div>
+
+                    </div>
+
+                    <div style="font-size:18px; color:#1e3a8a; font-weight:900;">›</div>
+
+                </div>
+
+            </a>
+
+            <a href="https://dev.mysql.com/doc/refman/8.0/en/privileges-provided.html" style="display:block; text-decoration:none; border:1px solid #e5e7eb; border-radius:12px; padding:12px; margin:10px 0; background:#ffffff;" target="_blank">
+
+                <div style="display:flex; align-items:center; gap:10px;">
+
+                    <img src="https://cdn-icons-png.flaticon.com/512/4649/4649581.png" width="26">
+
+                    <div style="flex:1;">
+
+                        <div style="font-weight:900; color:#0f172a; font-size:14px;">
+                            Privilégios no MySQL
+                        </div>
+
+                        <div style="color:#6b7280; font-size:13px;">
+                            Documentação oficial sobre permissões e segurança.
+                        </div>
+
+                    </div>
+
+                    <div style="font-size:18px; color:#1e3a8a; font-weight:900;">›</div>
+
+                </div>
+
+            </a>
+
+        </details>
+
+    </div>
+
+    <!-- ATIVIDADE -->
+    <div style="border:2px solid #e5e7eb;background:#f9fafc; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 6px rgba(0,0,0,0.05); border-left:2px solid #1e3a8a;">
+
+        <details>
+
+            <summary style="list-style:none;cursor:pointer; font-weight:700; color:#1e3a8a; font-size:16px;">
+
+                <h3 style="margin-top:0; color:#1e3a8a;">
+                    🧩 Atividade da semana
+                </h3>
+
+            </summary>
+
+            <p style="margin:0 0 12px 0; text-align:justify; color:#374151;">
+
+                Resolva exercícios práticos envolvendo consultas com INNER JOIN, LEFT JOIN,
+                RIGHT JOIN, funções de agregação, criação de visões e comandos de segurança.
+                Dê atenção especial à interpretação dos enunciados e à escolha correta dos comandos SQL.
+
+            </p>
+
+            <div style="background:#eef2ff; padding:12px; border-radius:10px; margin-bottom:14px;">
+
+                🧠 <strong>Sugestões de prática:</strong><br><br>
+
+                1. Criar uma consulta com INNER JOIN entre duas tabelas.<br>
+                2. Criar uma consulta com LEFT JOIN mostrando registros sem correspondência.<br>
+                3. Usar COUNT, SUM, AVG, MIN e MAX em consultas SQL.<br>
+                4. Criar uma VIEW para simplificar uma consulta complexa.<br>
+                5. Criar um usuário e conceder permissões com GRANT.<br>
+                6. Revogar permissões usando REVOKE.
+
+            </div>
+
+            <a href="https://docs.google.com/document/d/1W6zROXHsYLUMzTFxUTgzO2dXQN1KWdfjoj2JixQItys/edit?usp=sharing" target="_blank" rel="noopener" style="
+                display:inline-flex;
+                align-items:center;
+                gap:10px;
+                text-decoration:none;
+                background:linear-gradient(135deg, #1e3a8a, #172554);
+                color:#ffffff;
+                font-weight:900;
+                padding:10px 14px;
+                border-radius:14px;
+                font-size:17px;
+                box-shadow:0 6px 18px rgba(30, 58, 138, 0.5);
+                letter-spacing:0.5px;
+            ">
+
+                📝 Exercício
+
+            </a>
+
+            <a href="#" target="_blank" rel="noopener" style="
+                display:inline-flex;
+                align-items:center;
+                gap:10px;
+                text-decoration:none;
+                background:linear-gradient(135deg, #06402b, #26503a);
+                color:#ffffff;
+                font-weight:900;
+                padding:10px 14px;
+                border-radius:14px;
+                font-size:17px;
+                box-shadow:0 6px 18px rgba(30, 58, 138, 0.5);
+                letter-spacing:0.5px;
+            ">
+
+                ✅ Resposta
+
+            </a>
+
+        </details>
+
+    </div>
+
+    <!-- ENCERRAMENTO -->
+    <div style="border:2px solid #e5e7eb;background:#f9fafc; padding:22px; border-radius:14px; margin-bottom:20px; box-shadow:0 3px 8px rgba(0,0,0,0.06); border-left:4px solid #1e3a8a;">
+
+        <details>
+
+            <summary style="list-style:none;cursor:pointer; font-weight:800; color:#1e3a8a; font-size:17px;">
+
+                <h3 style="margin-top:0; color:#1e3a8a;">
+                    🎯 Encerramento
+                </h3>
+
+            </summary>
+
+            <div style="margin-top:15px; padding:14px; border-radius:12px; background:#ffffff; border:1px solid #e5e7eb;">
+
+                <p style="text-align: justify;">
+
+                    Para a prova, é importante compreender não apenas a sintaxe dos comandos,
+                    mas também a finalidade de cada recurso estudado. As junções permitem
+                    combinar dados de diferentes tabelas; as funções de agregação ajudam a
+                    resumir informações; as visões facilitam o reaproveitamento de consultas;
+                    e os comandos de segurança protegem o acesso aos dados.
+
+                </p>
+
+                <p style="text-align: justify;">
+
+                    Revise os exemplos, pratique os comandos no MySQL e procure entender
+                    o resultado gerado por cada consulta. Isso ajudará na resolução das
+                    questões práticas e na interpretação dos problemas apresentados.
+
+                </p>
+
+            </div>
+
+            <p style="text-align:center; margin-top:18px;">
+
+                <img src="https://media.giphy.com/media/L8K62iTDkzGX6/giphy.gif" alt="SQL Database" width="240" style="border-radius:12px;">
+
+            </p>
+
+        </details>
+
+    </div>
+
+</div>

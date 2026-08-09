@@ -1,0 +1,344 @@
+<div style="font-family:'Segoe UI', Arial, sans-serif; max-width:820px; margin:auto; line-height:1.75; color:#111827;">
+
+    <!-- Cabeçalho -->
+    <div style="border:2px solid #e5e7eb;background:#f9fafc; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 6px rgba(0,0,0,0.05); border-left:2px solid #1e3a8a;">
+        <div style="display:flex; align-items:flex-start; gap:12px;">
+            <div style="min-width:44px; height:44px; border-radius:10px; background:#eef2ff; display:flex; align-items:center; justify-content:center; font-weight:800; color:#3730a3;">
+                SQL
+            </div>
+
+            <div style="flex:1;">
+                <div style="font-size:22px; font-weight:900; color:#1e3a8a; margin:0 0 6px 0;">
+                    ALTER TABLE e Manipulação da Estrutura de Tabelas
+                </div>
+                <div style="font-size:14px; color:#6b7280;">
+                    Profª Miriã Corrêa
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= BOAS-VINDAS ================= -->
+    <div style="border:2px solid #e5e7eb;background:#f9fafc; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 6px rgba(0,0,0,0.05); border-left:2px solid #1e3a8a;">
+
+        <details open="">
+            <summary style="list-style:none;cursor:pointer; font-weight:700; color:#1e3a8a; font-size:16px;">
+                <h2 style="margin-top:0; color:#1e3a8a;">
+                    🚀 O comando ALTER TABLE
+                </h2>
+            </summary>
+
+            <p style="text-align:justify;">
+                Nesta aula, vamos aprender como modificar estruturas já existentes em um banco de dados utilizando o comando 
+                <strong>ALTER TABLE</strong>. Você verá como adicionar, remover e alterar colunas, além de trabalhar com 
+                restrições como chave primária e chave estrangeira.
+            </p>
+
+            <div style="background:#eef2ff; padding:12px; border-radius:10px; margin-top:12px;">
+                💡 <strong>Você vai compreender que:</strong><br>
+                🔹 ALTER TABLE modifica tabelas existentes<br>
+                🔹 ADD adiciona colunas e restrições<br>
+                🔹 CHANGE altera nomes e tipos de colunas<br>
+                🔹 MODIFY modifica tipos de dados<br>
+                🔹 DROP remove colunas e chaves<br>
+                🔹 RENAME altera o nome de tabelas
+            </div>
+
+            <div style="background:#eef2ff; border:1px solid #c7d2fe; padding:14px 16px; border-radius:12px; margin-top:20px; font-size:18px; color:#1e3a8a;">
+                <strong>ℹ️ Como navegar:</strong> Clique no título de cada card para abrir o conteúdo.
+            </div>
+
+            <div style="border-top:1px solid #e5e7eb; margin-top:15px; padding-top:15px;"></div>
+
+            <p style="text-align:center;">
+                <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=1200&auto=format&fit=crop" 
+                     alt="SQL ALTER TABLE" 
+                     width="100%" 
+                     style="border-radius:12px;">
+            </p>
+
+            <div style="border-top:1px solid #e5e7eb; margin-top:15px; padding-top:15px;"></div>
+
+            <div style="background:#eef2ff; border:1px solid #c7d2fe; padding:14px 16px; border-radius:12px; margin-bottom:20px; font-size:18px; color:#1e3a8a;">
+                <strong>ℹ️ Navegação rápida:</strong> Utilize os cards 🚀 📚 🧠 💻 🔗 🧩 🎯 para acessar os conteúdos da semana.
+            </div>
+
+        </details>
+    </div>
+
+    <!-- ================= CONTEÚDO DA SEMANA ================= -->
+    <div style="border:2px solid #e5e7eb;background:#f9fafc; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 6px rgba(0,0,0,0.05); border-left:2px solid #1e3a8a;">
+
+        <details>
+
+            <summary style="list-style:none;cursor:pointer; font-weight:700; color:#1e3a8a; font-size:16px;">
+                <h3 style="margin-top:0; color:#1e3a8a;">
+                    📚 Conteúdo da Semana
+                </h3>
+            </summary>
+
+            <dl style="margin-top:10px;">
+
+                <dd>📌 O comando ALTER TABLE</dd>
+                <dd>📌 ALTER + ADD</dd>
+                <dd>📌 ALTER + ALTER</dd>
+                <dd>📌 ALTER + CHANGE</dd>
+                <dd>📌 ALTER + MODIFY</dd>
+                <dd>📌 ALTER + DROP COLUMN</dd>
+                <dd>📌 ALTER + DROP PRIMARY KEY</dd>
+                <dd>📌 ALTER + DROP FOREIGN KEY</dd>
+                <dd>📌 ALTER + RENAME</dd>
+
+                <dd style="margin-top:10px; font-weight:700;">
+                    🔧 Operações práticas
+                </dd>
+
+                <dd>📌 Adicionar colunas</dd>
+                <dd>📌 Modificar tipos de dados</dd>
+                <dd>📌 Alterar nomes de atributos</dd>
+                <dd>📌 Adicionar e remover restrições</dd>
+                <dd>📌 Renomear tabelas</dd>
+
+            </dl>
+
+        </details>
+
+    </div>
+
+    <!-- COMO ESTUDAR -->
+    <div style="border:2px solid #e5e7eb;background:#f9fafc; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 6px rgba(0,0,0,0.05); border-left:2px solid #1e3a8a;">
+
+        <details>
+
+            <summary style="list-style:none;cursor:pointer; font-weight:700; color:#1e3a8a; font-size:16px;">
+                <h3 style="margin-top:0; color:#1e3a8a;">
+                    🧠 Como estudar nesta semana
+                </h3>
+            </summary>
+
+            <ul>
+                <li>Observe cuidadosamente a sintaxe de cada comando ALTER</li>
+                <li>Compare as diferenças entre CHANGE e MODIFY</li>
+                <li>Pratique alterações em tabelas simples no MySQL Workbench</li>
+                <li>Entenda quando utilizar ADD, DROP e RENAME</li>
+                <li>Teste exemplos reais de modificação de tabelas</li>
+            </ul>
+
+            <div style="margin-top:18px; background:#1e3a8a; color:#ffffff; padding:14px; border-radius:12px;">
+                💡 Pergunta guia:
+                <em>
+                    “Como modificar corretamente estruturas existentes em um banco de dados sem perder consistência?”
+                </em>
+            </div>
+
+        </details>
+
+    </div>
+
+    <!-- ================= MATERIAL DE AULA ================= -->
+    <div style="border:2px solid #e5e7eb;background:#f9fafc; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 6px rgba(0,0,0,0.05); border-left:2px solid #1e3a8a;">
+
+        <details>
+
+            <summary style="list-style:none;cursor:pointer; font-weight:700; color:#1e3a8a; font-size:16px;">
+                <h3 style="margin-top:0; color:#1e3a8a;">
+                    📝 Materiais da Semana
+                </h3>
+            </summary>
+
+            <!-- Material 1 -->
+            <a href="#" target="_blank" style="text-decoration:none;">
+
+                <div style="display:flex; border:1px solid #e5e7eb; border-radius:12px; padding:12px; margin:10px 0; background:#ffffff; align-items:center; gap:10px;">
+
+                    <img src="https://uxwing.com/wp-content/themes/uxwing/download/file-and-folder-type/pdf-icon.png" width="26">
+
+                    <div style="flex:1;">
+
+                        <div style="font-weight:900; color:#0f172a; font-size:14px;">
+                            ALTER TABLE
+                        </div>
+
+                        <div style="color:#6b7280; font-size:13px;">
+                            Material principal da aula.
+                        </div>
+
+                    </div>
+
+                    <div style="font-size:18px; color:#1e3a8a; font-weight:900;">
+                        ›
+                    </div>
+
+                </div>
+
+            </a>
+			<!-- Material 2 -->
+            <a href="#" target="_blank" style="text-decoration:none;">
+
+                <div style="display:flex; border:1px solid #e5e7eb; border-radius:12px; padding:12px; margin:10px 0; background:#ffffff; align-items:center; gap:10px;">
+
+                    <img src="https://cdn-icons-png.flaticon.com/512/4248/4248443.png" width="28">
+
+                    <div style="flex:1;">
+
+                        <div style="font-weight:900; color:#0f172a; font-size:14px;">
+                            Códigos SQL da Semana
+                        </div>
+
+                        <div style="color:#6b7280; font-size:13px;">
+                            Espaço destinado para postagem dos scripts SQL utilizados durante a aula.
+                        </div>
+
+                    </div>
+
+                    <div style="font-size:18px; color:#1e3a8a; font-weight:900;">
+                        ›
+                    </div>
+
+                </div>
+
+            </a>
+            
+        </details>
+
+    </div>
+
+    <!-- ================= LINKS ÚTEIS ================= -->
+    <div style="border:2px solid #e5e7eb;background:#f9fafc; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 6px rgba(0,0,0,0.05); border-left:2px solid #1e3a8a;">
+
+        <details>
+
+            <summary style="list-style:none;cursor:pointer; font-weight:700; color:#1e3a8a; font-size:16px;">
+
+                <h3 style="margin-top:0; color:#1e3a8a;">
+                    🔗 Links úteis
+                </h3>
+
+            </summary>
+
+            <!-- Link -->
+            <a href="http://www.bosontreinamentos.com.br/mysql/mysql-alterar-tabelas-alter-table-e-visualizar-relacionamentos-10/" 
+               target="_blank"
+               style="display:block; text-decoration:none; border:1px solid #e5e7eb; border-radius:12px; padding:12px; margin:10px 0; background:#ffffff;">
+
+                <div style="display:flex; align-items:center; gap:10px;">
+
+                    <img src="https://cdn-icons-png.flaticon.com/512/4649/4649581.png" width="26">
+
+                    <div style="flex:1;">
+
+                        <div style="font-weight:900; color:#0f172a; font-size:14px;">
+                            ALTER TABLE e Relacionamentos no MySQL
+                        </div>
+
+                        <div style="color:#6b7280; font-size:13px;">
+                            Material complementar sobre alterações de tabelas e visualização de relacionamentos.
+                        </div>
+
+                    </div>
+
+                    <div style="font-size:18px; color:#1e3a8a; font-weight:900;">
+                        ›
+                    </div>
+
+                </div>
+
+            </a>
+
+        </details>
+
+    </div>
+
+    <!-- ================= ATIVIDADE ================= -->
+    <div style="border:2px solid #e5e7eb;background:#f9fafc; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 6px rgba(0,0,0,0.05); border-left:2px solid #1e3a8a;">
+
+        <details>
+
+            <summary style="list-style:none;cursor:pointer; font-weight:700; color:#1e3a8a; font-size:16px;">
+
+                <h3 style="margin-top:0; color:#1e3a8a;">
+                    🧩 Atividade da semana
+                </h3>
+
+            </summary>
+
+            <p style="margin:0 0 12px 0; text-align:justify; color:#374151;">
+                Após estudar os conceitos apresentados, pratique os comandos ALTER TABLE realizando alterações em tabelas, colunas e restrições.
+            </p>
+
+            <a href="https://docs.google.com/document/d/1n9JsNXJrOjrDaaDM7FEqSuO69eawp4gXbvu-NffC3rs/edit?usp=sharing"
+               target="_blank"
+               rel="noopener"
+               style="
+                    display:inline-flex;
+                    align-items:center;
+                    gap:10px;
+                    text-decoration:none;
+                    background:linear-gradient(135deg, #1e3a8a, #172554);
+                    color:#ffffff;
+                    font-weight:900;
+                    padding:10px 14px;
+                    border-radius:14px;
+                    font-size:17px;
+                    box-shadow:0 6px 18px rgba(30, 58, 138, 0.5);
+                    letter-spacing:0.5px;
+               ">
+
+                📝 Exercício
+
+            </a>
+<a href="" target="_blank" rel="noopener" style="
+display:inline-flex;
+align-items:center;
+gap:10px;
+text-decoration:none;
+background:linear-gradient(135deg, #06402b, #26503a);
+color:#ffffff;
+font-weight:900;
+padding:10px 14px;
+border-radius:14px;
+font-size:17px;
+box-shadow:0 6px 18px rgba(30, 58, 138, 0.5);
+letter-spacing:0.5px;
+">✅Resposta</a>
+
+        </details>
+
+    </div>
+
+    <!-- ================= ENCERRAMENTO ================= -->
+    <div style="border:2px solid #e5e7eb;background:#f9fafc; padding:22px; border-radius:14px; margin-bottom:20px; box-shadow:0 3px 8px rgba(0,0,0,0.06); border-left:4px solid #1e3a8a;">
+
+        <details>
+
+            <summary style="list-style:none;cursor:pointer; font-weight:800; color:#1e3a8a; font-size:17px;">
+
+                <h3 style="margin-top:0; color:#1e3a8a;">
+                    🎯 Encerramento
+                </h3>
+
+            </summary>
+
+            <div style="margin-top:15px; padding:14px; border-radius:12px; background:#ffffff; border:1px solid #e5e7eb;">
+
+                <p align="justify">
+                    O comando ALTER TABLE é essencial para manutenção e evolução de bancos de dados. 
+                    Com ele, é possível adaptar estruturas às novas necessidades das aplicações sem recriar tabelas do zero.
+                </p>
+
+            </div>
+
+            <p style="text-align:center; margin-top:18px;">
+
+                <img src="https://media.giphy.com/media/L8K62iTDkzGX6/giphy.gif"
+                     alt="SQL"
+                     width="220"
+                     style="border-radius:12px;">
+
+            </p>
+
+        </details>
+
+    </div>
+
+</div>

@@ -1,0 +1,275 @@
+<div style="font-family:'Segoe UI', Arial, sans-serif; max-width:820px; margin:auto; line-height:1.75; color:#111827;">
+
+    <!-- ================= CABEÇALHO DA DISCIPLINA ================= -->
+    <div style="border:2px solid #e5e7eb;background:#f9fafc; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 6px rgba(0,0,0,0.05); border-left:2px solid #1e3a8a;">
+        <div style="display:flex; align-items:flex-start; gap:12px;">
+
+            <div style="min-width:44px; height:44px; border-radius:10px; background:#eef2ff; display:flex; align-items:center; justify-content:center; font-weight:800; color:#3730a3;">
+                BDA
+            </div>
+
+            <div style="flex:1;">
+                <div style="font-size:19px; font-weight:900; color:#111827; margin:0 0 6px 0;">Álgebra Relacional e SQL – Junção Externa</div>
+
+                <div style="font-size:14px; color:#6b7280;">
+                    Prof.(a) Miriã Corrêa
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ================= BOAS-VINDAS ================= -->
+    <div style="border:2px solid #e5e7eb;background:#f9fafc; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 6px rgba(0,0,0,0.05); border-left:2px solid #1e3a8a;">
+
+        <details open="">
+            <summary style="list-style:none;cursor:pointer; font-weight:700; color:#1e3a8a; font-size:16px;">
+                <h3 style="margin-top:0; color:#1e3a8a;">🚀 Junção Externa (OUTER JOIN)</h3>
+            </summary>
+
+            <p>
+                Diferente da junção interna, a <strong>junção externa preserva tuplas mesmo quando não existe correspondência entre as tabelas</strong>.
+            </p>
+
+            <div style="background:#eef2ff;border:1px solid #c7d2fe;padding:14px;border-radius:12px;font-size:18px;color:#1e3a8a;">
+                💡 OUTER JOIN mantém registros e preenche com <strong>NULL</strong> quando não há correspondência.
+            </div>
+
+            <p>
+                Essa operação é essencial quando precisamos <strong>manter todas as informações das tabelas</strong> para análises completas.
+            </p>
+
+            <h4 style="color:#1e3a8a;">Tipos de Junção Externa</h4>
+            <dl>
+                <dd>✔ LEFT JOIN (Esquerda)</dd>
+                <dd>✔ RIGHT JOIN (Direita)</dd>
+                <dd>✔ FULL JOIN (Completa)</dd>
+            </dl>
+
+            <p><strong>💻 Exemplo em SQL:</strong></p>
+            <pre style="background:#111827;color:#fff;padding:12px;border-radius:10px;">            -- LEFT JOIN
+SELECT F.Nome, D.Nome AS Depto
+FROM FUNCIONARIO F
+LEFT JOIN DEPARTAMENTO D ON F.Depto = D.Num;
+
+-- RIGHT JOIN
+SELECT pnome, dnome
+FROM funcionario
+RIGHT JOIN departamento ON dnr=dnumero;
+
+-- FULL JOIN no MySQL
+SELECT pnome, dnome FROM funcionario
+LEFT JOIN departamento ON dnr=dnumero
+UNION
+SELECT pnome, dnome FROM funcionario
+RIGHT JOIN departamento ON dnr=dnumero;
+</pre>
+
+
+
+            <div style="border-top:1px solid #e5e7eb; margin-top:15px; padding-top:15px; text-align:center;">
+
+                <img src="https://viannavirtual.com.br/ead/draftfile.php/26770/user/draft/208258050/ChatGPT%20Image%2023%20de%20abr.%20de%202026%2C%2020_26_29.png" alt="" width="1672" height="941" role="presentation" style="width:60%; max-width:420px; height:auto; border-radius:12px; display:inline-block;" class="img-fluid atto_image_button_middle">
+                <div style="border-top:1px solid #e5e7eb; margin-top:15px; padding-top:15px; text-align:center;">
+                </div>
+            </div>
+
+            <br>
+
+            <div style="background:#eef2ff; border:1px solid #c7d2fe; padding:14px 16px; border-radius:12px; margin-bottom:20px; font-size:18px; color:#1e3a8a;">
+                <strong>ℹ️ Como navegar:</strong> Clique no título de cada card (🚀 📚 🧠 📝 🔗 🧩 🎯) para abrir o conteúdo da semana.
+            </div>
+        </details>
+    </div>
+
+
+    <!-- ================= CONTEÚDO DA SEMANA ================= -->
+    <div style="border:2px solid #e5e7eb;background:#f9fafc; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 6px rgba(0,0,0,0.05); border-left:2px solid #1e3a8a;">
+
+        <details>
+            <summary style="list-style:none;cursor:pointer; font-weight:700; color:#1e3a8a; font-size:16px;">
+                <h3 style="margin-top:0; color:#1e3a8a;">📚 Conteúdo da Semana</h3>
+            </summary>
+
+            <dl>
+                <dd>📌 Problema da Junção Interna</dd>
+                <dd>📌 Conceito de Junção Externa</dd>
+                <dd>📌 LEFT JOIN</dd>
+                <dd>📌 RIGHT JOIN</dd>
+                <dd>📌 FULL JOIN</dd>
+                <dd>📌 Tratamento de valores NULL</dd>
+                <dd>📌 Implementação no MySQL (UNION)</dd>
+            </dl>
+
+        </details>
+    </div>
+
+
+    <!-- Como estudar (passo a passo) -->
+    <!-- ================= COMO ESTUDAR ================= -->
+    <div style="border:2px solid #e5e7eb;background:#f9fafc; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 6px rgba(0,0,0,0.05); border-left:2px solid #1e3a8a;">
+
+        <details>
+            <summary style="list-style:none;cursor:pointer; font-weight:700; color:#1e3a8a; font-size:16px;">
+                <h3 style="margin-top:0; color:#1e3a8a;">🧠 Como estudar nesta semana</h3>
+            </summary>
+
+            <div style="margin-top:10px;">
+                <strong>1º Entenda o problema</strong>
+                <p>Perceba que a INNER JOIN elimina tuplas sem correspondência.</p>
+
+                <strong>2º Entenda a solução</strong>
+                <p>A OUTER JOIN preserva os registros preenchendo com NULL.</p>
+
+                <strong>3º Compare LEFT, RIGHT e FULL</strong>
+                <p>Observe qual lado da relação está sendo preservado.</p>
+
+                <strong>4º Pratique no MySQL</strong>
+                <p>Implemente FULL JOIN utilizando LEFT + RIGHT + UNION.</p>
+            </div>
+        </details>
+    </div>
+
+
+    <!-- ================= MATERIAIS ================= -->
+    <div style="border:2px solid #e5e7eb;background:#f9fafc; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 6px rgba(0,0,0,0.05); border-left:2px solid #1e3a8a;">
+        <details>
+            <summary style="list-style:none;cursor:pointer; font-weight:700; color:#1e3a8a; font-size:16px;">
+                <h3 style="margin-top:0; color:#1e3a8a;">📝 Materiais da semana</h3>
+            </summary>
+
+            <!-- Material 1 --> <a href="https://viannavirtual.com.br/ead/pluginfile.php/200615/mod_book/chapter/35129/Juncao-Externa.pptx" target="_blank" style="text-decoration: none">
+                <div style="text-decoration: none; display: flex; border: 1px solid rgb(229, 231, 235); border-radius: 12px; padding: 12px; margin: 10px 0px; background: rgb(255, 255, 255); align-items: center; gap: 10px;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Microsoft_PowerPoint_2013-2019_logo.svg/960px-Microsoft_PowerPoint_2013-2019_logo.svg.png" width="26">
+                    <div style="flex:1;">
+                        <div style="font-weight:900; color:#0f172a; font-size:16px;">Junção Externa</div>
+                        <div style="color:#6b7280; font-size:13px;">Material teórico da semana.</div>
+                    </div>
+                    <div style="font-size:18px; color:#1e3a8a; font-weight:900;">›</div>
+                </div>
+            </a>
+
+            <!-- Material 2 -->
+            <a href="https://docs.google.com/document/d/1JoOYIpZMdUdtZQjKnd5VpBxJC6zCkknasettkVJ5cJc/edit?usp=sharing" target="_blank" style="text-decoration: none">
+                <div style="text-decoration: none; display: flex; border: 1px solid rgb(229, 231, 235); border-radius: 12px; padding: 12px; margin: 10px 0px; background: rgb(255, 255, 255); align-items: center; gap: 10px;"> <img src="https://cdn-icons-png.flaticon.com/512/5968/5968517.png" width="26">
+                    <div style="flex:1;">
+                        <div style="font-weight:900; color:#0f172a; font-size:16px;">Anotações</div>
+                        <div style="color:#6b7280; font-size:13px;"> Anotações da semana. </div>
+                    </div>
+                    <div style="font-size:18px; color:#1e3a8a; font-weight:900;">›</div>
+                </div>
+            </a>
+            <!-- Material 3 --> <a href="https://viannavirtual.com.br/ead/mod/resource/view.php?id=147287" style="display:block; text-decoration:none; border:1px solid #e5e7eb; border-radius:12px; padding:12px; margin:10px 0; background:#ffffff;">
+                <div style="display:flex; align-items:center; gap:10px;"> <img src="https://cdn-icons-png.flaticon.com/512/5097/5097510.png" width="26">
+                    <div style="flex:1;">
+                        <div style="font-weight:900; color:#0f172a; font-size:16px;">Símbolos</div>
+                        <div style="color:#6b7280; font-size:13px;"> Símbolos - Álgebra Relacional.</div>
+                    </div>
+                    <div style="font-size:18px; color:#1e3a8a; font-weight:900;">›</div>
+                </div>
+            </a>
+
+        </details>
+    </div>
+    <!-- ================= LINKS ÚTEIS ================= -->
+    <div style="border:2px solid #e5e7eb;background:#f9fafc; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 6px rgba(0,0,0,0.05); border-left:2px solid #1e3a8a;">
+
+        <details>
+
+            <summary style="list-style:none;cursor:pointer; font-weight:700; color:#1e3a8a; font-size:16px;">
+                <h3 style="margin-top:0; color:#1e3a8a;">🔗 Links úteis</h3>
+            </summary>
+
+            <!-- Link 1 -->
+            <a href="https://www.cadcobol.com.br/db2_join_tech_agilist_inner_joins_and_outer_joins.htm" style="display:block; text-decoration:none; border:1px solid #e5e7eb; border-radius:12px; padding:12px; margin:10px 0; background:#ffffff;">
+                <div style="display:flex; align-items:center; gap:10px;">
+                    <img src="https://cdn-icons-png.flaticon.com/512/4649/4649581.png" alt="" width="26" height="26" role="presentation" class="img-fluid atto_image_button_middle">
+                    <div style="flex:1;">
+                        <div style="font-weight:900; color:#0f172a; font-size:14px;">
+                            DB2 Join - Inner Joins and Outer Joins
+                        </div>
+                        <div style="color:#6b7280; font-size:13px;">
+                            Material Complementar.
+                        </div>
+                    </div>
+                    <div style="font-size:18px; color:#1e3a8a; font-weight:900;">›</div>
+                </div>
+            </a>
+            <!-- Link 2 -->
+            <a href="https://www.linkedin.com/pulse/explicando-join-de-forma-simples-marcilio-filho/" style="display:block; text-decoration:none; border:1px solid #e5e7eb; border-radius:12px; padding:12px; margin:10px 0; background:#ffffff;">
+                <div style="display:flex; align-items:center; gap:10px;">
+                    <img src="https://cdn-icons-png.flaticon.com/512/4649/4649581.png" alt="" width="26" height="26" role="presentation" class="img-fluid atto_image_button_middle">
+                    <div style="flex:1;">
+                        <div style="font-weight:900; color:#0f172a; font-size:14px;">
+                            Explicação de junções por teoria dos conjuntos
+                        </div>
+                        <div style="color:#6b7280; font-size:13px;">
+                            Material Complementar.
+                        </div>
+                    </div>
+                    <div style="font-size:18px; color:#1e3a8a; font-weight:900;">›</div>
+                </div>
+            </a>
+        </details>
+    </div>
+
+    <!-- ================= ATIVIDADE ================= -->
+    <div style="border:2px solid #e5e7eb;background:#f9fafc; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 6px rgba(0,0,0,0.05); border-left:2px solid #1e3a8a;">
+        <details open="">
+            <summary style="list-style:none;cursor:pointer; font-weight:700; color:#1e3a8a; font-size:16px;">
+                <h3 style="margin-top:0; color:#1e3a8a;">
+                    🧩 Atividade da semana
+                </h3>
+            </summary>
+
+            <p style="margin:0 0 12px 0; text-align:justify; color:#374151;">
+                Após estudar os conceitos apresentados e ler o material complementar, faça o exercício proposto.
+            </p>
+
+            <a href="https://docs.google.com/document/d/1g-wQF27rG4G8UYt36ei54EY4gAYxxNp5iU--Sr48xHM/edit?usp=sharing" target="_blank" rel="noopener" style="
+display:inline-flex;
+align-items:center;
+gap:10px;
+text-decoration:none;
+background:linear-gradient(135deg, #1e3a8a, #172554);
+color:#ffffff;
+font-weight:900;
+padding:10px 14px;
+border-radius:14px;
+font-size:17px;
+box-shadow:0 6px 18px rgba(30, 58, 138, 0.5);
+letter-spacing:0.5px;
+"> 📝 Exercício</a>
+            <a href="" target="_blank" rel="noopener" style="
+display:inline-flex;
+align-items:center;
+gap:10px;
+text-decoration:none;
+background:linear-gradient(135deg, #06402b, #26503a);
+color:#ffffff;
+font-weight:900;
+padding:10px 14px;
+border-radius:14px;
+font-size:17px;
+box-shadow:0 6px 18px rgba(30, 58, 138, 0.5);
+letter-spacing:0.5px;
+">✅Resposta 1</a>
+        </details>
+    </div>
+
+
+    <!-- ================= ENCERRAMENTO ================= -->
+    <div style="border:2px solid #e5e7eb;background:#f9fafc; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 6px rgba(0,0,0,0.05); border-left:2px solid #1e3a8a;">
+        <details>
+            <summary style="list-style:none;cursor:pointer; font-weight:700; color:#1e3a8a; font-size:16px;">
+                <h3 style="margin-top:0; color:#1e3a8a;">🎯 Encerramento</h3>
+            </summary>
+
+            <div style="color:#6b7280; font-size:13px;">
+                <p>
+                    A junção externa é fundamental para análises completas, pois garante que nenhuma informação importante seja perdida por falta de correspondência entre tabelas.
+                </p>
+                <p align="justify"><img src="https://viannavirtual.com.br/ead/draftfile.php/26770/user/draft/208258050/200w%20%281%29.gif" alt="" width="192" height="79" role="presentation" class="img-fluid atto_image_button_text-bottom"><br></p>
+            </div>
+        </details>
+    </div>
+</div>

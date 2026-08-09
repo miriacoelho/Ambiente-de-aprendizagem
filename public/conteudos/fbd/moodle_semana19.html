@@ -1,0 +1,349 @@
+<div style="font-family:'Segoe UI', Arial, sans-serif; max-width:820px; margin:auto; line-height:1.75; color:#111827;">
+
+    <!-- ================= CABEÇALHO ================= -->
+    <div style="border:2px solid #e5e7eb;background:#f9fafc; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 6px rgba(0,0,0,0.05); border-left:2px solid #1e3a8a;">
+        <div style="display:flex; align-items:flex-start; gap:12px;">
+            <div style="min-width:44px; height:44px; border-radius:10px; background:#eef2ff; display:flex; align-items:center; justify-content:center; font-weight:800; color:#3730a3;">
+                SQL
+            </div>
+            <div style="flex:1;">
+                <div style="font-size:22px; font-weight:900; color:#1e3a8a; margin:0 0 6px 0;">
+                    Linguagem SQL para Incluir, Alterar e Excluir Dados
+                </div>
+                <div style="font-size:14px; color:#6b7280;">
+                    Profª Miriã Corrêa
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= BOAS VINDAS ================= -->
+    <div style="border:2px solid #e5e7eb;background:#f9fafc; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 6px rgba(0,0,0,0.05); border-left:2px solid #1e3a8a;">
+        <details open="">
+            <summary style="list-style:none;cursor:pointer; font-weight:700; color:#1e3a8a; font-size:16px;">
+                <h2 style="margin-top:0; color:#1e3a8a;">
+                    🚀 Comandos: INSERT, UPDATE e DELETE
+                </h2>
+            </summary>
+
+            <p style="text-align:justify;">
+                Nesta semana, estudaremos os principais comandos SQL utilizados para modificar os dados de um banco de dados relacional.
+                O foco será compreender como inserir novos registros, alterar informações existentes e remover dados de forma correta e segura.
+            </p>
+
+            <div style="background:#eef2ff; padding:12px; border-radius:10px; margin-top:12px;">
+                💡 <strong>Você deve saber:</strong><br>
+                🔹 Como funciona o banco de dados Fornecedor, com as tabelas fornecedor, peça e pedido<br>
+                🔹 Como usar o comando <strong>INSERT</strong> para inserir uma ou várias tuplas<br>
+                🔹 Como respeitar tipos de dados, chaves primárias e chaves estrangeiras no INSERT<br>
+                🔹 Como usar o comando <strong>DELETE</strong> com cláusula WHERE<br>
+                🔹 Como aplicar operadores lógicos e de comparação nas exclusões<br>
+                🔹 Como usar o comando <strong>UPDATE</strong> com SET e WHERE<br>
+                🔹 Por que é importante testar comandos antes de executá-los em produção
+            </div>
+
+            <div style="background:#eef2ff; border:1px solid #c7d2fe; padding:14px 16px; border-radius:12px; margin-top:20px; font-size:18px; color:#1e3a8a;">
+                <strong>ℹ️ Como navegar:</strong>
+                Clique no título de cada card para abrir o conteúdo da revisão.
+            </div>
+
+            <div style="border-top:1px solid #e5e7eb; margin-top:15px; padding-top:15px;"></div>
+
+            <p style="text-align:center;">
+                <img src="https://viannavirtual.com.br/ead/draftfile.php/26770/user/draft/520057423/ChatGPT%20Image%2016%20de%20jun.%20de%202026%2C%2018_04_51.png" alt="" width="1536" height="1024" role="presentation" style="border-radius:12px;" class="img-fluid atto_image_button_text-bottom">
+            </p>
+
+
+            <div style="border-top:1px solid #e5e7eb; margin-top:15px; padding-top:15px;"></div>
+
+            <div style="background:#eef2ff; border:1px solid #c7d2fe; padding:14px 16px; border-radius:12px; margin-bottom:20px; font-size:18px; color:#1e3a8a;">
+                <strong>ℹ️ Navegação rápida:</strong>
+                Utilize os cards 🚀 📚 🧠 📝 🔗 🧩🌟🎯 para revisar os conteúdos da semana.
+            </div>
+        </details>
+    </div>
+
+    <!-- ================= CONTEÚDO ================= -->
+    <div style="border:2px solid #e5e7eb;background:#f9fafc; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 6px rgba(0,0,0,0.05); border-left:2px solid #1e3a8a;">
+        <details>
+            <summary style="list-style:none;cursor:pointer; font-weight:700; color:#1e3a8a; font-size:16px;">
+                <h3 style="margin-top:0; color:#1e3a8a;">
+                    📚 Conteúdo da Semana
+                </h3>
+            </summary>
+
+            <dl style="margin-top:10px;">
+                <dd>📌 Banco de dados Fornecedor</dd>
+                <dd>📌 Tabelas fornecedor, peça e pedido</dd>
+                <dd>📌 Comandos de modificação em SQL</dd>
+                <dd>📌 INSERT: sintaxe básica</dd>
+                <dd>📌 INSERT com todos os valores</dd>
+                <dd>📌 INSERT com colunas explícitas</dd>
+                <dd>📌 INSERT com múltiplas tuplas</dd>
+                <dd>📌 Regras de tipos de dados no INSERT</dd>
+                <dd>📌 Integridade referencial no INSERT</dd>
+                <dd>📌 Chave primária e valores NULL</dd>
+                <dd>📌 DELETE: estrutura do comando</dd>
+                <dd>📌 DELETE com WHERE</dd>
+                <dd>📌 Operadores lógicos e de comparação</dd>
+                <dd>📌 Exclusão de zero, um ou vários registros</dd>
+                <dd>📌 Proteção do MySQL: SQL_SAFE_UPDATES</dd>
+                <dd>📌 UPDATE: estrutura do comando</dd>
+                <dd>📌 UPDATE com SET e WHERE</dd>
+                <dd>📌 Atualização de um registro</dd>
+                <dd>📌 Atualização de múltiplos registros</dd>
+                <dd>📌 Cuidados com UPDATE e DELETE sem WHERE</dd>
+            </dl>
+
+            <div style="margin-top:18px; background:#eef2ff; border:1px solid #c7d2fe; padding:14px; border-radius:12px; color:#1e3a8a;">
+                <strong>Objetivo:</strong> compreender como os comandos INSERT, DELETE e UPDATE modificam os dados armazenados nas tabelas, mantendo a consistência do banco de dados.
+            </div>
+        </details>
+    </div>
+
+    <!-- ================= COMO ESTUDAR ================= -->
+    <div style="border:2px solid #e5e7eb;background:#f9fafc; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 6px rgba(0,0,0,0.05); border-left:2px solid #1e3a8a;">
+        <details>
+            <summary style="list-style:none;cursor:pointer; font-weight:700; color:#1e3a8a; font-size:16px;">
+                <h3 style="margin-top:0; color:#1e3a8a;">
+                    🧠 Como estudar nesta semana
+                </h3>
+            </summary>
+
+            <ul>
+                <li>Revise o esquema do banco de dados Fornecedor e identifique a função de cada tabela.</li>
+                <li>Compare os comandos INSERT, DELETE e UPDATE, observando a finalidade de cada um.</li>
+                <li>Pratique comandos INSERT com todos os valores, com colunas explícitas e com múltiplas tuplas.</li>
+                <li>Observe as regras para textos, datas, números inteiros, números decimais e valores NULL.</li>
+                <li>Analise exemplos em que o SGBD rejeita operações por violação de chave estrangeira ou chave primária.</li>
+                <li>Treine comandos DELETE com WHERE, AND, OR, IS NULL, IS NOT NULL e operadores de comparação.</li>
+                <li>Estude UPDATE usando SET para definir novos valores e WHERE para limitar quais registros serão alterados.</li>
+                <li>Antes de executar DELETE ou UPDATE, pense: quais registros serão afetados?</li>
+            </ul>
+
+            <div style="margin-top:18px; background:#1e3a8a; color:#ffffff; padding:14px; border-radius:12px;">
+                💡 Pergunta guia:
+                <em>“Ao visualizar um comando SQL, consigo identificar quais registros serão inseridos, alterados ou excluídos?”</em>
+            </div>
+        </details>
+    </div>
+
+    <!-- ================= MATERIAIS ================= -->
+    <div style="border:2px solid #e5e7eb;background:#f9fafc; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 6px rgba(0,0,0,0.05); border-left:2px solid #1e3a8a;">
+        <details>
+            <summary style="list-style:none;cursor:pointer; font-weight:700; color:#1e3a8a; font-size:16px;">
+                <h3 style="margin-top:0; color:#1e3a8a;">
+                    📝 Materiais da Semana
+                </h3>
+            </summary>
+
+            <!-- MATERIAL 1 -->
+            <a href="https://viannavirtual.com.br/ead/draftfile.php/26770/user/draft/520057423/Linguagem-SQL-para-Incluir-Alterar-e-Excluir-Dados.pdf" target="_blank" style="text-decoration:none;">
+                <div style="display:flex; border:1px solid #e5e7eb; border-radius:12px; padding:12px; margin:10px 0; background:#ffffff; align-items:center; gap:10px;">
+                    <img src="https://uxwing.com/wp-content/themes/uxwing/download/file-and-folder-type/pdf-icon.png" width="26">
+                    <div style="flex:1;">
+                        <div style="font-weight:900; color:#0f172a; font-size:14px;">
+                            Linguagem SQL para Incluir, Alterar e Excluir Dados
+                        </div>
+                        <div style="color:#6b7280; font-size:13px;">
+                            Material principal da semana sobre INSERT, DELETE e UPDATE.
+                        </div>
+                    </div>
+                    <div style="font-size:18px; color:#1e3a8a; font-weight:900;">›</div>
+                </div>
+            </a>
+
+            <!-- MATERIAL 2 -->
+            <div style="display:flex; border:1px solid #e5e7eb; border-radius:12px; padding:12px; margin:10px 0; background:#ffffff; align-items:center; gap:10px;">
+                <img src="https://cdn-icons-png.flaticon.com/512/4248/4248443.png" width="26">
+                <div style="flex:1;">
+                    <div style="font-weight:900; color:#0f172a; font-size:14px;">
+                        Banco de Dados Fornecedor
+                    </div>
+                    <div style="color:#6b7280; font-size:13px;">
+                        Esquema com as tabelas fornecedor, peça e pedido para praticar os comandos estudados.
+                    </div>
+                </div>
+                <div style="font-size:18px; color:#1e3a8a; font-weight:900;">›</div>
+            </div>
+        </details>
+    </div>
+
+    <!-- ================= LINKS ÚTEIS ================= -->
+    <div style="border:2px solid #e5e7eb;background:#f9fafc; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 6px rgba(0,0,0,0.05); border-left:2px solid #1e3a8a;">
+        <details>
+            <summary style="list-style:none;cursor:pointer; font-weight:700; color:#1e3a8a; font-size:16px;">
+                <h3 style="margin-top:0; color:#1e3a8a;">
+                    🔗 Links Úteis
+                </h3>
+            </summary>
+
+            <p style="text-align:justify;">
+                Utilize os materiais abaixo para complementar seus estudos e testar comandos SQL.
+            </p>
+
+            <!-- LINK 1 -->
+            <a href="https://www.w3schools.com/sql/sql_insert.asp" target="_blank" style="text-decoration:none;">
+                <div style="display:flex; border:1px solid #e5e7eb; border-radius:12px; padding:12px; margin:10px 0; background:#ffffff; align-items:center; gap:10px;">
+                    <span style="font-size:24px;">🟢</span>
+                    <div style="flex:1;">
+                        <div style="font-weight:900; color:#0f172a; font-size:14px;">W3Schools — SQL INSERT INTO</div>
+                        <div style="color:#6b7280; font-size:13px;">Explicação e exemplos do comando INSERT.</div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- LINK 2 -->
+            <a href="https://www.w3schools.com/sql/sql_delete.asp" target="_blank" style="text-decoration:none;">
+                <div style="display:flex; border:1px solid #e5e7eb; border-radius:12px; padding:12px; margin:10px 0; background:#ffffff; align-items:center; gap:10px;">
+                    <span style="font-size:24px;">🔴</span>
+                    <div style="flex:1;">
+                        <div style="font-weight:900; color:#0f172a; font-size:14px;">W3Schools — SQL DELETE</div>
+                        <div style="color:#6b7280; font-size:13px;">Exemplos de exclusão de registros usando WHERE.</div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- LINK 3 -->
+            <a href="https://www.w3schools.com/sql/sql_update.asp" target="_blank" style="text-decoration:none;">
+                <div style="display:flex; border:1px solid #e5e7eb; border-radius:12px; padding:12px; margin:10px 0; background:#ffffff; align-items:center; gap:10px;">
+                    <span style="font-size:24px;">🔵</span>
+                    <div style="flex:1;">
+                        <div style="font-weight:900; color:#0f172a; font-size:14px;">W3Schools — SQL UPDATE</div>
+                        <div style="color:#6b7280; font-size:13px;">Explicação sobre SET, WHERE e atualização de registros.</div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- LINK 4 -->
+            <a href="https://www.db-fiddle.com/" target="_blank" style="text-decoration:none;">
+                <div style="display:flex; border:1px solid #e5e7eb; border-radius:12px; padding:12px; margin:10px 0; background:#ffffff; align-items:center; gap:10px;">
+                    <span style="font-size:24px;">🧪</span>
+                    <div style="flex:1;">
+                        <div style="font-weight:900; color:#0f172a; font-size:14px;">DB Fiddle</div>
+                        <div style="color:#6b7280; font-size:13px;">Ambiente online para testar comandos SQL sem instalar software.</div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- LINK 5 -->
+            <a href="https://dev.mysql.com/doc/refman/8.0/en/sql-prepared-statements.html" target="_blank" style="text-decoration:none;">
+                <div style="display:flex; border:1px solid #e5e7eb; border-radius:12px; padding:12px; margin:10px 0; background:#ffffff; align-items:center; gap:10px;">
+                    <span style="font-size:24px;">📘</span>
+                    <div style="flex:1;">
+                        <div style="font-weight:900; color:#0f172a; font-size:14px;">Documentação Oficial do MySQL</div>
+                        <div style="color:#6b7280; font-size:13px;">Referência oficial para aprofundamento em comandos SQL no MySQL.</div>
+                    </div>
+                </div>
+            </a>
+        </details>
+    </div>
+
+    <!-- ================= ATIVIDADE ================= -->
+    <div style="border:2px solid #e5e7eb;background:#f9fafc; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 6px rgba(0,0,0,0.05); border-left:2px solid #1e3a8a;">
+        <details>
+            <summary style="list-style:none;cursor:pointer; font-weight:700; color:#1e3a8a; font-size:16px;">
+                <h3 style="margin-top:0; color:#1e3a8a;">
+                    🧩 Atividade da semana
+                </h3>
+            </summary>
+
+            <p style="margin:0 0 12px 0; text-align:justify; color:#374151;">
+                Desenvolva os exercícios de revisão sobre os comandos INSERT, DELETE e UPDATE.
+            </p>
+                <a href="https://docs.google.com/document/d/1PsnpDsQeS0QxiDPw2kgLr4UwdKsuVAbxdYOxaoU_3yY/edit?usp=sharing" target="_blank" rel="noopener" style="
+                    display:inline-flex;
+                    align-items:center;
+                    gap:10px;
+                    text-decoration:none;
+                    background:linear-gradient(135deg, #1e3a8a, #172554);
+                    color:#ffffff;
+                    font-weight:900;
+                    padding:10px 14px;
+                    border-radius:14px;
+                    font-size:17px;
+                    box-shadow:0 6px 18px rgba(30, 58, 138, 0.5);
+                    letter-spacing:0.5px;
+                ">
+
+                📝 Exercício
+
+            </a>
+
+            <a href="#" target="_blank" rel="noopener" style="
+                    display:inline-flex;
+                    align-items:center;
+                    gap:10px;
+                    text-decoration:none;
+                    background:linear-gradient(135deg, #06402b, #26503a);
+                    color:#ffffff;
+                    font-weight:900;
+                    padding:10px 14px;
+                    border-radius:14px;
+                    font-size:17px;
+                    box-shadow:0 6px 18px rgba(30, 58, 138, 0.5);
+                    letter-spacing:0.5px;
+                ">
+
+                ✅ Resposta
+
+            </a>
+            
+        </details>
+    </div>
+
+    <!-- ================= RESUMO FINAL ================= -->
+    <div style="border:2px solid #e5e7eb;background:#f9fafc; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 6px rgba(0,0,0,0.05); border-left:2px solid #1e3a8a;">
+        <details>
+            <summary style="list-style:none;cursor:pointer; font-weight:700; color:#1e3a8a; font-size:16px;">
+                <h3 style="margin-top:0; color:#1e3a8a;">
+                    🌟 Resumo da Semana
+                </h3>
+            </summary>
+
+            <div style="background:#ffffff; border:1px solid #e5e7eb; padding:16px; border-radius:12px; margin-bottom:12px;">
+                <strong style="color:#1e3a8a;">INSERT</strong><br>
+                Adiciona novas tuplas a uma tabela existente. Os valores devem respeitar a ordem das colunas ou a lista de colunas informada. Chaves primárias não aceitam NULL e chaves estrangeiras devem referenciar registros existentes.
+            </div>
+
+            <div style="background:#ffffff; border:1px solid #e5e7eb; padding:16px; border-radius:12px; margin-bottom:12px;">
+                <strong style="color:#1e3a8a;">DELETE</strong><br>
+                Remove registros de uma tabela. A cláusula WHERE define quais tuplas serão excluídas. Sem WHERE, todos os registros da tabela são removidos, mas a estrutura da tabela permanece no banco de dados.
+            </div>
+
+            <div style="background:#ffffff; border:1px solid #e5e7eb; padding:16px; border-radius:12px; margin-bottom:12px;">
+                <strong style="color:#1e3a8a;">UPDATE</strong><br>
+                Modifica valores em registros existentes. A cláusula SET indica os novos valores, e a cláusula WHERE limita quais registros serão alterados. Sem WHERE, todos os registros da tabela podem ser atualizados.
+            </div>
+
+            <div style="background:#1e3a8a; color:#ffffff; padding:14px; border-radius:12px;">
+                ✅ <strong>Dica final:</strong> antes de executar DELETE ou UPDATE, teste a condição com SELECT para verificar quais registros serão afetados.
+            </div>
+        </details>
+    </div>
+
+    <!-- ================= ENCERRAMENTO ================= -->
+    <div style="border:2px solid #e5e7eb;background:#f9fafc; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 6px rgba(0,0,0,0.05); border-left:2px solid #1e3a8a;">
+        <details>
+            <summary style="list-style:none;cursor:pointer; font-weight:700; color:#1e3a8a; font-size:16px;">
+                <h3 style="margin-top:0; color:#1e3a8a;">
+                    🎯 Encerramento
+                </h3>
+            </summary>
+
+            <p style="text-align:justify;">
+                Os comandos INSERT, DELETE e UPDATE são fundamentais para manipular dados em bancos de dados relacionais.
+                Eles devem ser utilizados com atenção, pois alteram diretamente o conteúdo armazenado nas tabelas.
+            </p>
+
+            <p style="text-align:justify;">
+                Ao estudar, procure sempre identificar a tabela envolvida, os campos utilizados, as condições aplicadas e o impacto da operação sobre os registros.
+            </p>
+
+            <div style="background:#eef2ff; border:1px solid #c7d2fe; padding:14px; border-radius:12px; color:#1e3a8a;">
+                Bons estudos! Pratique os comandos e revise os exemplos apresentados no material da semana. 🚀
+            </div>
+        </details>
+    </div>
+
+</div>

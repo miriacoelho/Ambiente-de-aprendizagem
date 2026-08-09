@@ -1,0 +1,267 @@
+<div style="font-family:'Segoe UI', Arial, sans-serif; max-width:820px; margin:auto; line-height:1.75; color:#111827;">
+
+    <!-- ================= CABEÇALHO DA DISCIPLINA ================= -->
+    <div style="border:2px solid #e5e7eb;background:#f9fafc; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 6px rgba(0,0,0,0.05); border-left:2px solid #1e3a8a;">
+        <div style="display:flex; align-items:flex-start; gap:12px;">
+
+            <div style="min-width:44px; height:44px; border-radius:10px; background:#eef2ff; display:flex; align-items:center; justify-content:center; font-weight:800; color:#3730a3;">
+                BDA
+            </div>
+
+            <div style="flex:1;">
+                <div style="font-size:19px; font-weight:900; color:#111827; margin:0 0 6px 0;">Álgebra Relacional e SQL – Produto Cartesiano</div>
+
+                <div style="font-size:14px; color:#6b7280;">
+                    Prof.(a) Miriã Corrêa
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ================= BOAS-VINDAS ================= -->
+    <div style="border:2px solid #e5e7eb;background:#f9fafc; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 6px rgba(0,0,0,0.05); border-left:2px solid #1e3a8a;">
+
+        <details open="">
+            <summary style="list-style:none;cursor:pointer; font-weight:700; color:#1e3a8a; font-size:16px;">
+                <h3 style="margin-top:0; color:#1e3a8a;">🚀 Produto Cartesiano</h3>
+            </summary>
+
+            <p><strong>Sejam bem-vindos(as) ao estudo da Álgebra Relacional e SQL: Produto Cartesiano</strong></p>
+
+            <p>
+                Nesta semana vamos estudar o <strong>Produto Cartesiano</strong>, uma operação fundamental da
+                álgebra relacional que combina tuplas de duas relações.
+            </p>
+
+            <p>
+                Também veremos como esse conceito é aplicado em <strong>SQL</strong>, além de discutir problemas como
+                <strong>atributos ambíguos</strong> e o uso de <strong>apelidos (alias)</strong>.
+            </p>
+
+            <div style="border-top:1px solid #e5e7eb; margin-top:15px; padding-top:15px; text-align:center;">
+
+                <img src="https://viannavirtual.com.br/ead/draftfile.php/26770/user/draft/112472518/algebrarelacional-sql-2.png" alt="" width="801" height="276" role="presentation" style="width:60%; max-width:420px; height:auto; border-radius:12px; display:inline-block;" class="img-fluid atto_image_button_middle">
+                <div style="border-top:1px solid #e5e7eb; margin-top:15px; padding-top:15px; text-align:center;">
+                </div>
+            </div>
+            <div style="background:#eef2ff; border:1px solid #c7d2fe; padding:12px; border-radius:12px; font-size:18px; color:#1e3a8a;">
+                💡 <strong>Pense assim:</strong> o produto cartesiano combina tudo com tudo — e depois filtramos o que realmente importa.
+            </div>
+            <br>
+
+            <div style="background:#eef2ff; border:1px solid #c7d2fe; padding:14px 16px; border-radius:12px; margin-bottom:20px; font-size:18px; color:#1e3a8a;">
+                <strong>ℹ️ Como navegar:</strong> Clique no título de cada card (🚀 📚 🧠 📝 🧩 🎯) para abrir o conteúdo da semana.
+            </div>
+        </details>
+    </div>
+
+
+    <!-- ================= CONTEÚDO DA SEMANA ================= -->
+    <div style="border:2px solid #e5e7eb;background:#f9fafc; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 6px rgba(0,0,0,0.05); border-left:2px solid #1e3a8a;">
+
+        <details>
+            <summary style="list-style:none;cursor:pointer; font-weight:700; color:#1e3a8a; font-size:16px;">
+                <h3 style="margin-top:0; color:#1e3a8a;">📚 Conteúdo da Semana</h3>
+            </summary>
+
+            <dl>
+                <dd>📌 Produto Cartesiano (conceito e definição)</dd>
+                <dd>📌 Operação binária na álgebra relacional</dd>
+                <dd>📌 Exemplos práticos com tabelas</dd>
+                <dd>📌 Seleção após produto cartesiano</dd>
+                <dd>📌 Junção como otimização do produto cartesiano</dd>
+                <dd>📌 Atributos ambíguos em SQL</dd>
+                <dd>📌 Apelidos (alias) de tabelas e atributos</dd>
+                <dd>📌 Produto cartesiano em SQL</dd>
+            </dl>
+
+
+        </details>
+    </div>
+
+
+    <!-- Como estudar (passo a passo) -->
+    <!-- ================= COMO ESTUDAR ================= -->
+    <div style="border:2px solid #e5e7eb;background:#f9fafc; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 6px rgba(0,0,0,0.05); border-left:2px solid #1e3a8a;">
+
+        <details>
+            <summary style="list-style:none;cursor:pointer; font-weight:700; color:#1e3a8a; font-size:16px;">
+                <h3 style="margin-top:0; color:#1e3a8a;">🧠 Como estudar nesta semana</h3>
+            </summary>
+
+            <p style="text-align:justify;">
+                O objetivo desta semana é compreender a operação de <strong>Produto Cartesiano (×)</strong>
+                na Álgebra Relacional e entender como ela é utilizada na combinação de tabelas e na base das consultas SQL.
+            </p>
+
+            <!-- PASSO 1 -->
+            <div style="background:#eef2ff; border:1px solid #c7d2fe; padding:12px; border-radius:10px; margin-top:15px;">
+                <strong>📘 1º Passo – Leia o material da semana</strong>
+                <p style="margin-top:6px;">
+                    Faça a leitura do material sobre <strong>Produto Cartesiano</strong>, observando principalmente:
+                </p>
+
+                <dl style="margin-top:6px;">
+                    <dd>✔ O que é o Produto Cartesiano</dd>
+                    <dd>✔ Como ocorre a combinação entre duas relações</dd>
+                    <dd>✔ O conceito de todas as combinações possíveis</dd>
+                    <dd>✔ Exemplos práticos com tabelas</dd>
+                </dl>
+            </div>
+
+            <!-- PASSO 2 -->
+            <div style="background:#ffffff; border:1px solid #e5e7eb; padding:12px; border-radius:10px; margin-top:15px;">
+                <strong>🔍 2º Passo – Analise exemplos simples</strong>
+
+                <p style="margin-top:6px;">
+                    Utilize tabelas pequenas (com 2 ou 3 linhas) e tente montar manualmente o resultado do produto cartesiano.
+                </p>
+
+                <p>
+                    Isso ajuda a visualizar como os dados são combinados entre si.
+                </p>
+            </div>
+
+            <!-- PASSO 3 -->
+            <div style="background:#eef2ff; border:1px solid #c7d2fe; padding:12px; border-radius:10px; margin-top:15px;">
+                <strong>📊 3º Passo – Observe o crescimento dos dados</strong>
+
+                <p style="margin-top:6px;">
+                    Perceba que o número de resultados cresce rapidamente.
+                </p>
+
+                <p>
+                    Exemplo: se uma tabela tem 3 linhas e outra tem 4, o resultado terá <strong>12 linhas</strong>.
+                </p>
+            </div>
+
+            <!-- PASSO 4 -->
+            <div style="background:#ffffff; border:1px solid #e5e7eb; padding:12px; border-radius:10px; margin-top:15px;">
+                <strong>💻 4º Passo – Relacione com SQL</strong>
+
+                <p style="margin-top:6px;">
+                    Entenda que o produto cartesiano ocorre quando utilizamos múltiplas tabelas no <strong>FROM</strong>:
+                </p>
+
+                <p>
+                    <strong>FROM tabela1, tabela2</strong>
+                </p>
+
+                <p>
+                    Esse comportamento é a base para operações mais avançadas.
+                </p>
+            </div>
+
+            <!-- PASSO 5 -->
+            <div style="background:#eef2ff; border:1px solid #c7d2fe; padding:12px; border-radius:10px; margin-top:15px;">
+                <strong>🔗 5º Passo – Aplique condições (WHERE)</strong>
+
+                <p style="margin-top:6px;">
+                    Aprenda que o produto cartesiano sozinho gera muitos dados sem relação.
+                </p>
+
+                <p>
+                    Utilize condições (<strong>WHERE</strong>) para filtrar e obter resultados corretos.
+                </p>
+            </div>
+
+
+
+            <div style="margin-top:15px; font-size:13px; color:#6b7280;">
+                💡 Dica: se aparecerem muitas combinações sem sentido, provavelmente faltou definir a condição de ligação entre as tabelas.
+            </div>
+        </details>
+    </div>
+
+
+    <!-- ================= MATERIAIS ================= -->
+    <div style="border:2px solid #e5e7eb;background:#f9fafc; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 6px rgba(0,0,0,0.05); border-left:2px solid #1e3a8a;">
+        <details>
+            <summary style="list-style:none;cursor:pointer; font-weight:700; color:#1e3a8a; font-size:16px;">
+                <h3 style="margin-top:0; color:#1e3a8a;">📝 Materiais da semana</h3>
+            </summary>
+
+            <!-- Material 1 --> <a href="https://viannavirtual.com.br/ead/pluginfile.php/200618/mod_book/chapter/35132/Algebra-Relacional-e-SQL-Produto-Cartesiano.pdf" target="_blank" style="text-decoration: none">
+                <div style="text-decoration: none; display: flex; border: 1px solid rgb(229, 231, 235); border-radius: 12px; padding: 12px; margin: 10px 0px; background: rgb(255, 255, 255); align-items: center; gap: 10px;"><img src="https://uxwing.com/wp-content/themes/uxwing/download/file-and-folder-type/pdf-icon.png" width="26">
+                    <div style="flex:1;">
+                        <div style="font-weight:900; color:#0f172a; font-size:16px;">Produto Cartesiano</div>
+                        <div style="color:#6b7280; font-size:13px;">Material teórico da semana.</div>
+                    </div>
+                    <div style="font-size:18px; color:#1e3a8a; font-weight:900;">›</div>
+                </div>
+            </a>
+            <!-- Material 2 --> <a href="https://viannavirtual.com.br/ead/pluginfile.php/200619/mod_book/chapter/35133/SELECT-e-Operadores-Basicos-em-SQL.pdf" target="_blank" style="text-decoration: none">
+                <div style="text-decoration: none; display: flex; border: 1px solid rgb(229, 231, 235); border-radius: 12px; padding: 12px; margin: 10px 0px; background: rgb(255, 255, 255); align-items: center; gap: 10px;"><img src="https://uxwing.com/wp-content/themes/uxwing/download/file-and-folder-type/pdf-icon.png" width="26">
+                    <div style="flex:1;">
+                        <div style="font-weight:900; color:#0f172a; font-size:16px;">Select e Operadores Básicos</div>
+                        <div style="color:#6b7280; font-size:13px;">Material teórico da semana.</div>
+                    </div>
+                    <div style="font-size:18px; color:#1e3a8a; font-weight:900;">›</div>
+                </div>
+            </a>
+            <!-- Material 3 -->
+            <a href="https://docs.google.com/document/d/10R8hyxr27hpeW7YLxxalie-nV8i_lLFyz2TRLUXO3hM/edit?usp=sharing" target="_blank" style="text-decoration: none">
+                <div style="text-decoration: none; display: flex; border: 1px solid rgb(229, 231, 235); border-radius: 12px; padding: 12px; margin: 10px 0px; background: rgb(255, 255, 255); align-items: center; gap: 10px;"> <img src="https://cdn-icons-png.flaticon.com/512/5968/5968517.png" width="26">
+                    <div style="flex:1;">
+                        <div style="font-weight:900; color:#0f172a; font-size:16px;">Anotações</div>
+                        <div style="color:#6b7280; font-size:13px;"> Anotações da semana. </div>
+                    </div>
+                    <div style="font-size:18px; color:#1e3a8a; font-weight:900;">›</div>
+                </div>
+            </a>
+            <!-- Material 4 --> <a href="https://viannavirtual.com.br/ead/mod/resource/view.php?id=147287" style="display:block; text-decoration:none; border:1px solid #e5e7eb; border-radius:12px; padding:12px; margin:10px 0; background:#ffffff;">
+                <div style="display:flex; align-items:center; gap:10px;"> <img src="https://cdn-icons-png.flaticon.com/512/5097/5097510.png" width="26">
+                    <div style="flex:1;">
+                        <div style="font-weight:900; color:#0f172a; font-size:16px;">Símbolos</div>
+                        <div style="color:#6b7280; font-size:13px;"> Símbolos - Álgebra Relacional.</div>
+                    </div>
+                    <div style="font-size:18px; color:#1e3a8a; font-weight:900;">›</div>
+                </div>
+            </a>
+            <!-- Material 5 --> <a href="https://viannavirtual.com.br/ead/pluginfile.php/200619/mod_book/chapter/35133/bds.zip" style="display:block; text-decoration:none; border:1px solid #e5e7eb; border-radius:12px; padding:12px; margin:10px 0; background:#ffffff;">
+                <div style="display:flex; align-items:center; gap:10px;"> <img src="https://images.icon-icons.com/1381/PNG/512/mysqlworkbench_93532.png" width="26">
+                    <div style="flex:1;">
+                        <div style="font-weight:900; color:#0f172a; font-size:14px;"> Banco de Dados </div>
+                        <div style="color:#6b7280; font-size:13px;"> Banco de dados e scripts da semana </div>
+                    </div>
+                    <div style="font-size:18px; color:#1e3a8a; font-weight:900;">›</div>
+                </div>
+            </a>
+        </details>
+    </div>
+
+
+    <!-- ================= ATIVIDADE ================= -->
+    <div style="border:2px solid #e5e7eb;background:#f9fafc; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 6px rgba(0,0,0,0.05); border-left:2px solid #1e3a8a;">
+        <details>
+            <summary style="list-style:none;cursor:pointer; font-weight:700; color:#1e3a8a; font-size:16px;">
+                <h3 style="margin-top:0; color:#1e3a8a;">
+                    🧩 Atividade da semana
+                </h3>
+            </summary>
+
+            <p style="margin:0 0 12px 0; text-align:justify; color:#374151;">
+                Após estudar os conceitos apresentados, faça o exercício proposto.</p>
+            <a href="https://forms.gle/fuRTiF8v4AbuJoNS8" target="_blank" rel="noopener" style="display:inline-block; text-decoration:none; background:#1e3a8a; color:#ffffff; font-weight:900; padding:10px 14px; border-radius:10px;font-size:16px"> Questões fechadas - Álgebra Relacional</a>
+        </details>
+    </div>
+
+
+    <!-- ================= ENCERRAMENTO ================= -->
+    <div style="border:2px solid #e5e7eb;background:#f9fafc; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 6px rgba(0,0,0,0.05); border-left:2px solid #1e3a8a;">
+        <details>
+            <summary style="list-style:none;cursor:pointer; font-weight:700; color:#1e3a8a; font-size:16px;">
+                <h3 style="margin-top:0; color:#1e3a8a;">🎯 Encerramento</h3>
+            </summary>
+
+            <div style="color:#6b7280; font-size:13px;">
+                <p align="justify">
+                    O produto cartesiano é a base para operações mais avançadas, como junções.
+                    Dominar esse conceito é essencial para trabalhar com bancos de dados relacionais.
+                </p>
+                <p align="justify"><img src="https://viannavirtual.com.br/ead/draftfile.php/26770/user/draft/112472518/200w%20%281%29.gif" alt="" width="192" height="79" role="presentation" class="img-fluid atto_image_button_text-bottom"><br></p>
+            </div>
+        </details>
+    </div>
+</div>
