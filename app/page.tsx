@@ -95,7 +95,7 @@ export default function Home() {
         <nav aria-label="Navegação principal">
           <a href="#disciplinas">Disciplinas</a>
           <a href="#semanas">Semanas</a>
-          <span className="period">2026.1</span>
+          <span className="period">2026.2</span>
         </nav>
       </header>
 
@@ -181,7 +181,7 @@ export default function Home() {
       </section>
 
       <footer>
-        <div className="footer-brand"><span className="brand-mark">MC</span><div><strong>Prof.ª Miriã Corrêa</strong><small>ADS · 2026.1</small></div></div>
+        <div className="footer-brand"><span className="brand-mark">MC</span><div><strong>Prof.ª Miriã Corrêa</strong><small>ADS · 2026.2</small></div></div>
         <p>Ensinar é criar condições para que cada pessoa encontre o seu caminho.</p>
         <a href="#inicio">Voltar ao topo ↑</a>
       </footer>
