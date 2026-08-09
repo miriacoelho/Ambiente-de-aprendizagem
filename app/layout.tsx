@@ -14,6 +14,7 @@ export async function generateMetadata(): Promise<Metadata> {
     metadataBase,
     title,
     description,
+    icons: { icon: "/favicon.png" },
     openGraph: { title, description, type: "website", locale: "pt_BR", images: [{ url: "/og.png", width: 1536, height: 1024, alt: "FBD, FTW e BDA — Prof.ª Miriã Corrêa" }] },
     twitter: { card: "summary_large_image", title, description, images: ["/og.png"] },
   };
