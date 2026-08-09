@@ -2,6 +2,8 @@
 
 Este pacote contém o portal das disciplinas FBD, FTW e BDA da Prof.ª Miriã Corrêa.
 
+Nesta etapa, apenas a Semana 1 de cada disciplina está visível no portal. As semanas seguintes poderão ser liberadas gradualmente após a atualização de seus links, imagens e arquivos HTML.
+
 ## Requisitos
 
 - Node.js 22.13 ou superior
@@ -26,4 +28,4 @@ O pacote de produção fornecido separadamente já contém a pasta `dist` gerada
 
 ## Conteúdos
 
-Os arquivos HTML e as imagens das 60 semanas estão em `public/conteudos`, organizados por disciplina.
+Os arquivos HTML e as imagens das disciplinas estão em `public/conteudos`, organizados por disciplina. Os três arquivos da Semana 1 incluem declaração UTF-8 para preservar acentos, emojis e ícones.
