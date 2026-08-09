@@ -11,31 +11,19 @@ type Course = {
   eyebrow: string;
   description: string;
   topics: string[];
-  imageExt: string[];
+  imagePath: (week: number) => string;
   fileName: (week: number) => string;
 };
 
 const topics: Record<CourseKey, string[]> = {
   fbd: [
-    "Introdução a Banco de Dados", "Introdução a Banco de Dados", "Projeto de Banco de Dados", "Modelo Conceitual",
-    "Modelo Conceitual", "Atributos no Modelo Conceitual", "Diagrama Entidade-Relacionamento", "Diagrama Entidade-Relacionamento",
-    "Generalização e Especialização", "Generalização e Especialização", "Modelo Relacional e Integridade", "Transformação ER para Relacional",
-    "Relacionamentos e Especialização", "CREATE DATABASE e CREATE TABLE", "Tipos de Dados em SQL", "ALTER TABLE",
-    "Restrições de Integridade", "Revisão para a Prova", "INSERT, UPDATE e DELETE", "Revisão Final de Banco de Dados",
+    "Apresentação da disciplina e introdução a Banco de Dados",
   ],
   ftw: [
-    "Apresentação da Disciplina", "Internet e World Wide Web", "Textos, Cabeçalhos e Cores", "Formatação de Textos",
-    "Hipertextos e Cores", "Réguas e Listas em HTML", "Listas em HTML", "Imagens e Vídeos em HTML",
-    "Mídias em HTML", "Links Internos em HTML", "Links Externos em HTML", "Prática com Links",
-    "Frames e IFrames", "Prática com IFrames", "Tabelas em HTML", "Layout com Tabelas",
-    "Formulários HTML", "Revisão para a Prova", "Formulários HTML", "Revisão Final de HTML",
+    "Apresentação da disciplina e fundamentos da Web",
   ],
   bda: [
-    "Revisão SQL: DDL, DML e Integridade", "Álgebra Relacional: Introdução", "Álgebra Relacional: Seleção", "Operação de Seleção",
-    "Álgebra Relacional: Projeção", "Produto Cartesiano", "Produto Cartesiano em SQL", "Junção Interna",
-    "INNER JOIN", "Consolidação de INNER JOIN", "Junção Externa", "OUTER JOIN",
-    "Consultas SQL Avançadas", "GROUP BY e HAVING", "Visões (Views)", "Consultas e Visões",
-    "Procedimentos em Banco de Dados", "Revisão para a Prova", "Prática de SQL Aplicado", "Revisão Final de BDA",
+    "Apresentação da disciplina e revisão de Banco de Dados",
   ],
 };
 
@@ -44,22 +32,22 @@ const courses: Course[] = [
     key: "fbd", short: "FBD", name: "Fundamentos de Banco de Dados", eyebrow: "Estruturar",
     description: "Da compreensão dos dados ao projeto conceitual, relacional e à linguagem SQL.",
     topics: topics.fbd,
-    imageExt: ["png","png","png","png","png","png","png","jpg","png","png","png","png","png","png","png","png","png","png","png","png"],
-    fileName: (week) => `moodle_semana${week}.html`,
+    imagePath: (week) => `imagens_semanas/semana${week}/semana${week}.png`,
+    fileName: () => "semana1_FBD.html",
   },
   {
     key: "ftw", short: "FTW", name: "Fundamentos de Tecnologia Web", eyebrow: "Construir",
     description: "Uma jornada prática pelos fundamentos da web e pela construção de páginas com HTML.",
     topics: topics.ftw,
-    imageExt: ["png","png","webp","png","png","png","png","png","png","png","png","png","png","png","png","png","png","png","png","png"],
-    fileName: (week) => `moodle_semana${week}.html`,
+    imagePath: (week) => `imagens_semanas/semana${week}/semana${week}.png`,
+    fileName: () => "semana1_FTW.html",
   },
   {
     key: "bda", short: "BDA", name: "Banco de Dados Aplicados", eyebrow: "Aprofundar",
     description: "Álgebra relacional e SQL aplicados à resolução de problemas reais com dados.",
     topics: topics.bda,
-    imageExt: ["png","png","png","png","png","png","png","gif","png","png","gif","png","png","png","avif","png","png","png","png","png"],
-    fileName: (week) => week === 17 ? "semana17_1_moodle.html" : `semana${week}_moodle.html`,
+    imagePath: (week) => `imagens_semanas/semana${week}/semana${week}.png`,
+    fileName: () => "semana1_BDA.html",
   },
 ];
 
@@ -103,7 +91,7 @@ export default function Home() {
         <div className="hero-copy">
           <span className="kicker"><i /> ADS · 1º semestre de 2026</span>
           <h1>Aprender tecnologia é<br /><em>construir caminhos.</em></h1>
-          <p>Conteúdos, práticas e atividades organizados para acompanhar sua evolução semana a semana.</p>
+          <p>Conteúdos, práticas e atividades organizados para acompanhar sua evolução. Novas semanas serão liberadas ao longo do semestre.</p>
           <a className="primary-button" href="#disciplinas">Explorar disciplinas <span>↓</span></a>
         </div>
         <div className="hero-panel" aria-label="Trilha das disciplinas">
@@ -132,7 +120,7 @@ export default function Home() {
               <strong>{item.short}</strong>
               <h3>{item.name}</h3>
               <p>{item.description}</p>
-              <span className="card-footer"><span>20 semanas</span><i>→</i></span>
+              <span className="card-footer"><span>Semana 1 disponível</span><i>→</i></span>
             </button>
           ))}
         </div>
@@ -160,12 +148,14 @@ export default function Home() {
           ))}
         </div>
 
+        <div className="release-note"><span>EM ANDAMENTO</span><p>A Semana 1 está disponível. As próximas semanas serão publicadas gradualmente pela professora.</p></div>
+
         <div className="weeks-meta"><span>{weeks.length} {weeks.length === 1 ? "semana encontrada" : "semanas"}</span><span>Selecione um card para abrir o conteúdo completo</span></div>
 
         {weeks.length > 0 ? (
           <div className="weeks-grid">
             {weeks.map(({ week, topic }) => {
-              const image = `/conteudos/${course.key}/imagens_semanas/semana${week}.${course.imageExt[week - 1]}`;
+              const image = `/conteudos/${course.key}/${course.imagePath(week)}`;
               const href = `/conteudos/${course.key}/${course.fileName(week)}`;
               return (
                 <a className="week-card" href={href} target="_blank" rel="noreferrer" key={`${course.key}-${week}`}>
