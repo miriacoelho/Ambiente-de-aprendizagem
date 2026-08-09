@@ -89,7 +89,7 @@ export default function Home() {
 
       <section className="hero" id="inicio">
         <div className="hero-copy">
-          <span className="kicker"><i /> ADS · 1º semestre de 2026</span>
+          <span className="kicker"><i /> ADS · 2º semestre de 2026</span>
           <h1>Aprender tecnologia é<br /><em>construir caminhos.</em></h1>
           <p>Conteúdos, práticas e atividades organizados para acompanhar sua evolução. Novas semanas serão liberadas ao longo do semestre.</p>
           <a className="primary-button" href="#disciplinas">Explorar disciplinas <span>↓</span></a>
