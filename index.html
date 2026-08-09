@@ -4,40 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ambiente de Aprendizagem — Prof.ª Miriã Corrêa</title>
-  <style>
-    :root{--azul:#173a62;--azul2:#24598f;--claro:#f3f7fb;--texto:#172033;--borda:#d8e2ec}
-    *{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--texto);background:var(--claro)}
-    header{padding:56px 22px;background:linear-gradient(135deg,var(--azul),var(--azul2));color:#fff;text-align:center}
-    header p{margin:10px 0 0;font-size:1.08rem} h1{margin:0;font-size:clamp(2rem,5vw,3.5rem)}
-    main{width:min(1100px,calc(100% - 32px));margin:38px auto 60px} .intro{text-align:center;margin-bottom:30px}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.card{background:#fff;border:1px solid var(--borda);border-radius:18px;overflow:hidden;box-shadow:0 10px 28px #173a6212;display:flex;flex-direction:column}
-    .card img{width:100%;aspect-ratio:16/9;object-fit:cover;background:#e7eef5}.body{padding:22px;display:flex;flex-direction:column;flex:1}.sigla{color:var(--azul2);font-weight:800;letter-spacing:.08em}.body h2{margin:7px 0 9px;font-size:1.28rem}.body p{line-height:1.55;margin:0 0 20px}
-    a.botao{margin-top:auto;text-align:center;padding:12px 16px;border-radius:10px;background:var(--azul2);color:#fff;text-decoration:none;font-weight:700}a.botao:hover{background:var(--azul)}
-    footer{text-align:center;padding:25px;color:#536274}@media(max-width:800px){.grid{grid-template-columns:1fr}header{padding:42px 18px}}
-  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/miriacoelho/Ambiente-de-aprendizagem@main/app/globals.css">
 </head>
-<body>
-  <header>
-    <h1>Ambiente de Aprendizagem</h1>
-    <p>Prof.ª Miriã Corrêa · ADS · 2º semestre de 2026</p>
-  </header>
-  <main>
-    <section class="intro"><h2>Disciplinas</h2><p>Selecione uma disciplina para acessar o conteúdo da Semana 1.</p></section>
-    <section class="grid">
-      <article class="card">
-        <img src="https://raw.githubusercontent.com/miriacoelho/Ambiente-de-aprendizagem/main/public/conteudos/fbd/imagens_semanas/semana1/semana1.png" alt="Fundamentos de Banco de Dados">
-        <div class="body"><span class="sigla">FBD</span><h2>Fundamentos de Banco de Dados</h2><p>Conteúdo e materiais da Semana 1.</p><a class="botao" href="https://htmlpreview.github.io/?https://github.com/miriacoelho/Ambiente-de-aprendizagem/blob/main/public/conteudos/fbd/semana1_FBD.html">Acessar Semana 1</a></div>
-      </article>
-      <article class="card">
-        <img src="https://raw.githubusercontent.com/miriacoelho/Ambiente-de-aprendizagem/main/public/conteudos/ftw/imagens_semanas/semana1/semana1.png" alt="Fundamentos de Tecnologia Web">
-        <div class="body"><span class="sigla">FTW</span><h2>Fundamentos de Tecnologia Web</h2><p>Conteúdo e materiais da Semana 1.</p><a class="botao" href="https://htmlpreview.github.io/?https://github.com/miriacoelho/Ambiente-de-aprendizagem/blob/main/public/conteudos/ftw/semana1_FTW.html">Acessar Semana 1</a></div>
-      </article>
-      <article class="card">
-        <img src="https://raw.githubusercontent.com/miriacoelho/Ambiente-de-aprendizagem/main/public/conteudos/bda/imagens_semanas/semana1/semana1.png" alt="Banco de Dados Avançado">
-        <div class="body"><span class="sigla">BDA</span><h2>Banco de Dados Avançado</h2><p>Conteúdo e materiais da Semana 1.</p><a class="botao" href="https://htmlpreview.github.io/?https://github.com/miriacoelho/Ambiente-de-aprendizagem/blob/main/public/conteudos/bda/semana1_BDA.html">Acessar Semana 1</a></div>
-      </article>
-    </section>
-  </main>
-  <footer>Prof.ª Miriã Corrêa · Análise e Desenvolvimento de Sistemas · 2026/2</footer>
-</body>
-</html>
+<body><main>
+  <header class="topbar"><a class="brand" href="#inicio" aria-label="Ir para o início"><span class="brand-mark">MC</span><span><strong>Prof.ª Miriã Corrêa</strong><small>Ambiente de aprendizagem</small></span></a><nav aria-label="Navegação principal"><a href="#disciplinas">Disciplinas</a><a href="#semanas">Semanas</a><span class="period">2026.2</span></nav></header>
+  <section class="hero" id="inicio"><div class="hero-copy"><span class="kicker"><i></i> ADS · 2º semestre de 2026</span><h1>Aprender tecnologia é<br><em>construir caminhos.</em></h1><p>Conteúdos, práticas e atividades organizados para acompanhar sua evolução. Novas semanas serão liberadas ao longo do semestre.</p><a class="primary-button" href="#disciplinas">Explorar disciplinas <span>↓</span></a></div><div class="hero-panel" aria-label="Trilha das disciplinas"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="hero-code">01</div><div class="path-card path-fbd"><b>FBD</b><span>Dados ganham estrutura</span></div><div class="path-card path-ftw"><b>FTW</b><span>Ideias ganham a web</span></div><div class="path-card path-bda"><b>BDA</b><span>Consultas viram respostas</span></div><div class="path-line line-one"></div><div class="path-line line-two"></div><div class="path-line line-three"></div></div></section>
+  <section class="course-section" id="disciplinas"><div class="section-heading"><div><span class="section-index">01 / DISCIPLINAS</span><h2>Três perspectivas.<br>Uma formação completa.</h2></div><p>Escolha uma disciplina para acessar a trilha completa de conteúdos do semestre.</p></div><div class="course-grid">
+    <button class="course-card fbd" data-course="fbd"><span class="card-number">01</span><span class="card-tag">Estruturar</span><strong>FBD</strong><h3>Fundamentos de Banco de Dados</h3><p>Da compreensão dos dados ao projeto conceitual, relacional e à linguagem SQL.</p><span class="card-footer"><span>Semana 1 disponível</span><i>→</i></span></button>
+    <button class="course-card ftw" data-course="ftw"><span class="card-number">02</span><span class="card-tag">Construir</span><strong>FTW</strong><h3>Fundamentos de Tecnologia Web</h3><p>Uma jornada prática pelos fundamentos da web e pela construção de páginas com HTML.</p><span class="card-footer"><span>Semana 1 disponível</span><i>→</i></span></button>
+    <button class="course-card bda" data-course="bda"><span class="card-number">03</span><span class="card-tag">Aprofundar</span><strong>BDA</strong><h3>Banco de Dados Aplicados</h3><p>Álgebra relacional e SQL aplicados à resolução de problemas reais com dados.</p><span class="card-footer"><span>Semana 1 disponível</span><i>→</i></span></button>
+  </div></section>
+  <section class="weeks-section theme-fbd" id="semanas"><div class="weeks-header"><div class="course-title-row"><span class="course-monogram" id="monogram">FBD</span><div><span class="section-index">02 / TRILHA SEMESTRAL</span><h2 id="course-title">Fundamentos de Banco de Dados</h2></div></div></div><div class="course-tabs" role="tablist" aria-label="Selecionar disciplina"><button data-tab="fbd" class="active"><b>FBD</b><span>Fundamentos de Banco de Dados</span></button><button data-tab="ftw"><b>FTW</b><span>Fundamentos de Tecnologia Web</span></button><button data-tab="bda"><b>BDA</b><span>Banco de Dados Aplicados</span></button></div><div class="release-note"><span>EM ANDAMENTO</span><p>A Semana 1 está disponível. As próximas semanas serão publicadas gradualmente pela professora.</p></div><div class="weeks-meta"><span>1 semana encontrada</span><span>Selecione o card para abrir o conteúdo completo</span></div><div class="weeks-grid"><a class="week-card" id="week-link" href="https://htmlpreview.github.io/?https://github.com/miriacoelho/Ambiente-de-aprendizagem/blob/main/public/conteudos/fbd/semana1_FBD.html" target="_blank" rel="noreferrer"><div class="week-image"><img id="week-image" src="https://raw.githubusercontent.com/miriacoelho/Ambiente-de-aprendizagem/main/public/conteudos/fbd/imagens_semanas/semana1/semana1.png" alt=""><span>SEMANA 01</span></div><div class="week-content"><h3 id="week-topic">Apresentação da disciplina e introdução a Banco de Dados</h3><span class="open-label">Abrir conteúdo <i>↗</i></span></div></a></div></section>
+  <footer><div class="footer-brand"><span class="brand-mark">MC</span><div><strong>Prof.ª Miriã Corrêa</strong><small>ADS · 2026.2</small></div></div><p>Ensinar é criar condições para que cada pessoa encontre o seu caminho.</p><a href="#inicio">Voltar ao topo ↑</a></footer>
+</main><script>
+const data={fbd:{short:'FBD',name:'Fundamentos de Banco de Dados',topic:'Apresentação da disciplina e introdução a Banco de Dados',file:'semana1_FBD.html'},ftw:{short:'FTW',name:'Fundamentos de Tecnologia Web',topic:'Apresentação da disciplina e fundamentos da Web',file:'semana1_FTW.html'},bda:{short:'BDA',name:'Banco de Dados Aplicados',topic:'Apresentação da disciplina e revisão de Banco de Dados',file:'semana1_BDA.html'}};
+function selectCourse(key,scroll){const c=data[key],section=document.querySelector('.weeks-section');section.className='weeks-section theme-'+key;document.getElementById('monogram').textContent=c.short;document.getElementById('course-title').textContent=c.name;document.getElementById('week-topic').textContent=c.topic;document.getElementById('week-image').src=`https://raw.githubusercontent.com/miriacoelho/Ambiente-de-aprendizagem/main/public/conteudos/${key}/imagens_semanas/semana1/semana1.png`;document.getElementById('week-link').href=`https://htmlpreview.github.io/?https://github.com/miriacoelho/Ambiente-de-aprendizagem/blob/main/public/conteudos/${key}/${c.file}`;document.querySelectorAll('[data-tab]').forEach(b=>b.classList.toggle('active',b.dataset.tab===key));if(scroll)section.scrollIntoView({behavior:'smooth'});}
+document.querySelectorAll('[data-course]').forEach(b=>b.addEventListener('click',()=>selectCourse(b.dataset.course,true)));document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()=>selectCourse(b.dataset.tab,false)));
+</script></body></html>
