@@ -83,6 +83,7 @@ export default function Home() {
         <nav aria-label="Navegação principal">
           <a href="#disciplinas">Disciplinas</a>
           <a href="#semanas">Semanas</a>
+          <a href="#planos">Planos</a>
           <span className="period">2026.2</span>
         </nav>
       </header>
@@ -146,6 +147,14 @@ export default function Home() {
               <b>{item.short}</b><span>{item.name}</span>
             </button>
           ))}
+        </div>
+
+        <div className="plan-area" id="planos" aria-label={`Planos da disciplina ${course.short}`}>
+          <div className="plan-heading"><span>DOCUMENTOS DA DISCIPLINA</span><h3>Planos de {course.short}</h3></div>
+          <div className="plan-grid">
+            <div className="plan-item"><div><b>Plano de ensino</b><small>Ementa, objetivos e critérios da disciplina</small></div><span>Link a publicar</span></div>
+            <div className="plan-item"><div><b>Plano de aula</b><small>Cronograma e organização das aulas</small></div><span>Link a publicar</span></div>
+          </div>
         </div>
 
         <div className="release-note"><span>EM ANDAMENTO</span><p>A Semana 1 está disponível. As próximas semanas serão publicadas gradualmente pela professora.</p></div>

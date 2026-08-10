@@ -71,6 +71,14 @@ a { color:inherit; text-decoration:none; }
 .course-tabs button span { font-size:11px; }
 .course-tabs button.active { color:var(--green); border-color:var(--green); }
 .theme-ftw .course-tabs button.active { color:var(--orange); border-color:var(--orange); } .theme-bda .course-tabs button.active { color:var(--blue); border-color:var(--blue); }
+.plan-area { display:grid; grid-template-columns:.42fr 1fr; gap:32px; align-items:center; border:1px solid #c8c8bf; background:#f8f6f0; padding:24px; margin:24px 0; }
+.plan-heading > span { color:var(--green); font-size:9px; font-weight:900; letter-spacing:.14em; }
+.theme-ftw .plan-heading > span { color:var(--orange); } .theme-bda .plan-heading > span { color:var(--blue); }
+.plan-heading h3 { font-family:Georgia,serif; font-size:24px; font-weight:400; margin:8px 0 0; }
+.plan-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.plan-item { min-height:82px; border:1px solid #d4d2c9; padding:15px; display:flex; align-items:center; justify-content:space-between; gap:16px; background:#fff; }
+.plan-item b,.plan-item small { display:block; }.plan-item b { font-family:Georgia,serif; font-size:16px; }.plan-item small { margin-top:5px; color:#6d756f; font-size:10px; line-height:1.35; }
+.plan-item > span { flex:0 0 auto; border:1px solid #aaa; border-radius:99px; padding:6px 9px; color:#727973; font-size:9px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
 .release-note { display:flex; align-items:center; gap:18px; border:1px solid #c8c8bf; background:rgba(248,246,240,.72); padding:15px 18px; margin:24px 0 30px; }
 .release-note span { flex:0 0 auto; color:var(--green); font-size:9px; font-weight:900; letter-spacing:.14em; border:1px solid currentColor; border-radius:99px; padding:6px 9px; }
 .theme-ftw .release-note span { color:var(--orange); } .theme-bda .release-note span { color:var(--blue); }
@@ -98,4 +106,5 @@ footer > a { font-size:11px; text-transform:uppercase; letter-spacing:.1em; bord
 @media (max-width:1000px) { .hero { grid-template-columns:1fr; }.hero-panel { min-height:480px; border-left:0; border-top:1px solid var(--line); }.weeks-grid { grid-template-columns:repeat(3,1fr); }.course-grid { grid-template-columns:1fr; }.course-card { min-height:350px; }.section-heading { grid-template-columns:1fr; gap:15px; }.weeks-header { align-items:flex-start; flex-direction:column; }.search-box { width:100%; }.course-tabs button span { display:none; } }
 @media (max-width:720px) { .topbar { height:74px; padding:0 20px; }.topbar nav a { display:none; }.brand small { display:none; }.hero-copy { padding:70px 22px 60px; }.hero h1 { font-size:50px; }.hero-panel { min-height:430px; }.path-card { width:160px; }.path-fbd { left:6%; }.path-ftw { right:5%; }.path-bda { left:12%; }.course-section,.weeks-section { padding:70px 22px; }.course-grid { border-left:0; }.course-card { padding:26px; border-left:1px solid var(--line); }.course-title-row { align-items:flex-start; }.course-monogram { width:58px; height:58px; flex:0 0 auto; font-size:17px; }.weeks-header h2 { font-size:31px; }.weeks-grid { grid-template-columns:1fr 1fr; }.weeks-meta span:last-child { display:none; }footer { grid-template-columns:1fr; text-align:left; } }
 @media (max-width:480px) { .hero h1 { font-size:43px; }.hero-panel { min-height:400px; }.path-card { width:145px; padding:14px; }.path-card b { font-size:28px; }.path-ftw { top:40%; }.path-bda { bottom:7%; }.weeks-grid { grid-template-columns:1fr; }.week-card { min-height:315px; }.week-image { height:185px; }.course-tabs button { justify-content:center; }.course-tabs button b { font-size:19px; }.section-heading h2 { font-size:38px; }.release-note { align-items:flex-start; flex-direction:column; gap:10px; } }
+@media (max-width:720px) { .plan-area,.plan-grid { grid-template-columns:1fr; } }
 @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } * { transition:none!important; } }
