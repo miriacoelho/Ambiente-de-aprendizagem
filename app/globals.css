@@ -75,8 +75,9 @@ a { color:inherit; text-decoration:none; }
 .plan-heading > span { color:var(--green); font-size:9px; font-weight:900; letter-spacing:.14em; }
 .theme-ftw .plan-heading > span { color:var(--orange); } .theme-bda .plan-heading > span { color:var(--blue); }
 .plan-heading h3 { font-family:Georgia,serif; font-size:24px; font-weight:400; margin:8px 0 0; }
-.plan-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
-.plan-item { min-height:82px; border:1px solid #d4d2c9; padding:15px; display:flex; align-items:center; justify-content:space-between; gap:16px; background:#fff; }
+.plan-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+.plan-item { min-height:82px; border:1px solid #d4d2c9; padding:15px; display:flex; align-items:center; justify-content:space-between; gap:16px; background:#fff; transition:.2s ease; }
+.plan-item:hover { transform:translateY(-2px); border-color:#8f968f; box-shadow:0 8px 20px rgba(23,34,29,.08); }
 .plan-item b,.plan-item small { display:block; }.plan-item b { font-family:Georgia,serif; font-size:16px; }.plan-item small { margin-top:5px; color:#6d756f; font-size:10px; line-height:1.35; }
 .plan-item > span { flex:0 0 auto; border:1px solid #aaa; border-radius:99px; padding:6px 9px; color:#727973; font-size:9px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
 .release-note { display:flex; align-items:center; gap:18px; border:1px solid #c8c8bf; background:rgba(248,246,240,.72); padding:15px 18px; margin:24px 0 30px; }

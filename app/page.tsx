@@ -13,6 +13,9 @@ type Course = {
   topics: string[];
   imagePath: (week: number) => string;
   fileName: (week: number) => string;
+  teachingPlan: string;
+  lessonPlan: string;
+  materials: string;
 };
 
 const topics: Record<CourseKey, string[]> = {
@@ -34,6 +37,9 @@ const courses: Course[] = [
     topics: topics.fbd,
     imagePath: (week) => `imagens_semanas/semana${week}/semana${week}.png`,
     fileName: () => "semana1_FBD.html",
+    teachingPlan: "https://drive.google.com/file/d/1beyevQXFKXc74sWogfu6L36Y4dj1L5ih/view?usp=sharing",
+    lessonPlan: "https://htmlpreview.github.io/?https://github.com/miriacoelho/Programacao-das-aulas-2026_2/blob/master/index.html",
+    materials: "https://drive.google.com/drive/folders/1hkFVuAtIoVwCqT2ISiwgHAOncIxlfp_q?usp=sharing",
   },
   {
     key: "ftw", short: "FTW", name: "Fundamentos de Tecnologia Web", eyebrow: "Construir",
@@ -41,6 +47,9 @@ const courses: Course[] = [
     topics: topics.ftw,
     imagePath: (week) => `imagens_semanas/semana${week}/semana${week}.png`,
     fileName: () => "semana1_FTW.html",
+    teachingPlan: "https://drive.google.com/file/d/1Qv5JZes4qLRUJm32dwgxTimgkUUyF143/view?usp=sharing",
+    lessonPlan: "https://htmlpreview.github.io/?https://github.com/miriacoelho/Programacao-das-aulas-2026_2/blob/master/index.html",
+    materials: "https://drive.google.com/drive/folders/13e7H9g_e5qKq3bVkE8TmZP-YsFiLf_lm?usp=sharing",
   },
   {
     key: "bda", short: "BDA", name: "Banco de Dados Aplicados", eyebrow: "Aprofundar",
@@ -48,6 +57,9 @@ const courses: Course[] = [
     topics: topics.bda,
     imagePath: (week) => `imagens_semanas/semana${week}/semana${week}.png`,
     fileName: () => "semana1_BDA.html",
+    teachingPlan: "https://drive.google.com/file/d/1QgT7ndx51gwf2OGeNqJ_9j8cmWjGHOsH/view?usp=sharing",
+    lessonPlan: "https://htmlpreview.github.io/?https://github.com/miriacoelho/Programacao-das-aulas-2026_2/blob/master/index.html",
+    materials: "https://drive.google.com/drive/folders/1LKAxf3nL0G0a9sw4n0V5WPF0fcgmKaLN?usp=sharing",
   },
 ];
 
@@ -152,8 +164,9 @@ export default function Home() {
         <div className="plan-area" id="planos" aria-label={`Planos da disciplina ${course.short}`}>
           <div className="plan-heading"><span>DOCUMENTOS DA DISCIPLINA</span><h3>Planos de {course.short}</h3></div>
           <div className="plan-grid">
-            <div className="plan-item"><div><b>Plano de ensino</b><small>Ementa, objetivos e critérios da disciplina</small></div><span>Link a publicar</span></div>
-            <div className="plan-item"><div><b>Plano de aula</b><small>Cronograma e organização das aulas</small></div><span>Link a publicar</span></div>
+            <a className="plan-item" href={course.teachingPlan} target="_blank" rel="noreferrer"><div><b>Plano de ensino</b><small>Ementa, objetivos e critérios da disciplina</small></div><span>Acessar ↗</span></a>
+            <a className="plan-item" href={course.lessonPlan} target="_blank" rel="noreferrer"><div><b>Plano de aula</b><small>Cronograma e organização das aulas</small></div><span>Acessar ↗</span></a>
+            <a className="plan-item" href={course.materials} target="_blank" rel="noreferrer"><div><b>Materiais de aula</b><small>Arquivos e recursos da disciplina</small></div><span>Acessar ↗</span></a>
           </div>
         </div>
 
