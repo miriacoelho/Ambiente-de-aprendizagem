@@ -164,7 +164,7 @@ export default function Home() {
         <div className="plan-area" id="planos" aria-label={`Planos da disciplina ${course.short}`}>
           <div className="plan-heading"><span>DOCUMENTOS DA DISCIPLINA</span><h3>Planos de {course.short}</h3></div>
           <div className="plan-grid">
-            <a className="plan-item" href={course.teachingPlan} target="_blank" rel="noreferrer"><div><b>Plano de ensino</b><small>Ementa, objetivos e critérios da disciplina</small></div><span>Acessar ↗</span></a>
+            <a className="plan-item" href={course.teachingPlan} target="_blank" rel="noreferrer"><div><b>Plano de aprendizagem</b><small>Ementa, objetivos e critérios da disciplina</small></div><span>Acessar ↗</span></a>
             <a className="plan-item" href={course.lessonPlan} target="_blank" rel="noreferrer"><div><b>Plano de aula</b><small>Cronograma e organização das aulas</small></div><span>Acessar ↗</span></a>
             <a className="plan-item" href={course.materials} target="_blank" rel="noreferrer"><div><b>Materiais de aula</b><small>Arquivos e recursos da disciplina</small></div><span>Acessar ↗</span></a>
           </div>
