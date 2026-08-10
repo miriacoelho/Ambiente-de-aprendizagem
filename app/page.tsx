@@ -35,7 +35,7 @@ const courses: Course[] = [
     key: "fbd", short: "FBD", name: "Fundamentos de Banco de Dados", eyebrow: "Estruturar",
     description: "Da compreensão dos dados ao projeto conceitual, relacional e à linguagem SQL.",
     topics: topics.fbd,
-    imagePath: (week) => `imagens_semanas/semana${week}/semana${week}.png`,
+    imagePath: (week) => week === 1 ? "imagens_semanas/semana1/semana1.png" : `imagens_semanas/semana${week}.${week === 8 ? "jpg" : "png"}`,
     fileName: () => "semana1_FBD.html",
     teachingPlan: "https://drive.google.com/file/d/1beyevQXFKXc74sWogfu6L36Y4dj1L5ih/view?usp=sharing",
     lessonPlan: "https://htmlpreview.github.io/?https://github.com/miriacoelho/Programacao-das-aulas-2026_2/blob/master/index.html",
@@ -45,7 +45,7 @@ const courses: Course[] = [
     key: "ftw", short: "FTW", name: "Fundamentos de Tecnologia Web", eyebrow: "Construir",
     description: "Uma jornada prática pelos fundamentos da web e pela construção de páginas com HTML.",
     topics: topics.ftw,
-    imagePath: (week) => `imagens_semanas/semana${week}/semana${week}.png`,
+    imagePath: (week) => week === 1 ? "imagens_semanas/semana1/semana1.png" : `imagens_semanas/semana${week}.${week === 3 ? "webp" : "png"}`,
     fileName: () => "semana1_FTW.html",
     teachingPlan: "https://drive.google.com/file/d/1Qv5JZes4qLRUJm32dwgxTimgkUUyF143/view?usp=sharing",
     lessonPlan: "https://htmlpreview.github.io/?https://github.com/miriacoelho/Programacao-das-aulas-2026_2/blob/master/index.html",
@@ -55,7 +55,7 @@ const courses: Course[] = [
     key: "bda", short: "BDA", name: "Banco de Dados Aplicados", eyebrow: "Aprofundar",
     description: "Álgebra relacional e SQL aplicados à resolução de problemas reais com dados.",
     topics: topics.bda,
-    imagePath: (week) => `imagens_semanas/semana${week}/semana${week}.png`,
+    imagePath: (week) => week === 1 ? "imagens_semanas/semana1/semana1.png" : `imagens_semanas/semana${week}.${[15,17].includes(week) ? "avif" : [8,11].includes(week) ? "gif" : "png"}`,
     fileName: () => "semana1_BDA.html",
     teachingPlan: "https://drive.google.com/file/d/1QgT7ndx51gwf2OGeNqJ_9j8cmWjGHOsH/view?usp=sharing",
     lessonPlan: "https://htmlpreview.github.io/?https://github.com/miriacoelho/Programacao-das-aulas-2026_2/blob/master/index.html",
@@ -74,8 +74,7 @@ export default function Home() {
 
   const weeks = useMemo(() => {
     const normalized = query.trim().toLocaleLowerCase("pt-BR");
-    return course.topics
-      .map((topic, index) => ({ week: index + 1, topic }))
+    return Array.from({ length: 20 }, (_, index) => ({ week: index + 1, topic: index === 0 ? course.topics[0] : `Semana ${index + 1}` }))
       .filter(({ week, topic }) => !normalized || topic.toLocaleLowerCase("pt-BR").includes(normalized) || String(week).includes(normalized));
   }, [course, query]);
 
@@ -179,11 +178,15 @@ export default function Home() {
             {weeks.map(({ week, topic }) => {
               const image = `/conteudos/${course.key}/${course.imagePath(week)}`;
               const href = `/conteudos/${course.key}/${course.fileName(week)}`;
-              return (
+              return week === 1 ? (
                 <a className="week-card" href={href} target="_blank" rel="noreferrer" key={`${course.key}-${week}`}>
                   <div className="week-image"><img src={image} alt="" loading="lazy" /><span>SEMANA {String(week).padStart(2, "0")}</span></div>
                   <div className="week-content"><h3>{topic}</h3><span className="open-label">Abrir conteúdo <i>↗</i></span></div>
                 </a>
+              ) : (
+                <div className="week-card locked" aria-disabled="true" key={`${course.key}-${week}`}>
+                  <div className="week-image"><img src={image} alt="" loading="lazy" /><span>SEMANA {String(week).padStart(2, "0")}</span><b>EM BREVE</b></div>
+                </div>
               );
             })}
           </div>
