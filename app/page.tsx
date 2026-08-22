@@ -21,9 +21,13 @@ type Course = {
 const topics: Record<CourseKey, string[]> = {
   fbd: [
     "Apresentação da disciplina e introdução a Banco de Dados",
+    "Fundamentos de Banco de Dados",
+    "Projeto de BD",
   ],
   ftw: [
     "Apresentação da disciplina e fundamentos da Web",
+    "Introdução à Internet e WWW",
+    "Formatação de textos, hipertextos, cabeçalhos e cores",
   ],
   bda: [
     "Apresentação da disciplina e revisão de Banco de Dados",
@@ -37,8 +41,8 @@ const courses: Course[] = [
     key: "fbd", short: "FBD", name: "Fundamentos de Banco de Dados", eyebrow: "Estruturar",
     description: "Da compreensão dos dados ao projeto conceitual, relacional e à linguagem SQL.",
     topics: topics.fbd,
-    imagePath: (week) => week === 1 ? "imagens_semanas/semana1/semana1.png" : `imagens_semanas/semana${week}.${week === 8 ? "jpg" : "png"}`,
-    fileName: () => "semana1_FBD.html",
+    imagePath: (week) => week === 1 ? "imagens_semanas/semana1/semana1.png" : week === 2 ? "imagens_semanas/semana2_FBD.png" : `imagens_semanas/semana${week}.${week === 8 ? "jpg" : "png"}`,
+    fileName: (week) => week === 1 ? "semana1_FBD.html" : week === 2 ? "semana2_FBD.html" : "semana3_FBD.html",
     teachingPlan: "https://drive.google.com/file/d/1beyevQXFKXc74sWogfu6L36Y4dj1L5ih/view?usp=sharing",
     lessonPlan: "https://htmlpreview.github.io/?https://github.com/miriacoelho/Programacao-das-aulas-2026_2/blob/master/index.html",
     materials: "https://drive.google.com/drive/folders/1hkFVuAtIoVwCqT2ISiwgHAOncIxlfp_q?usp=sharing",
@@ -48,7 +52,7 @@ const courses: Course[] = [
     description: "Uma jornada prática pelos fundamentos da web e pela construção de páginas com HTML.",
     topics: topics.ftw,
     imagePath: (week) => week === 1 ? "imagens_semanas/semana1/semana1.png" : `imagens_semanas/semana${week}.${week === 3 ? "webp" : "png"}`,
-    fileName: () => "semana1_FTW.html",
+    fileName: (week) => week === 1 ? "semana1_FTW.html" : week === 2 ? "semana2_FTW.html" : "semana3_FTW.html",
     teachingPlan: "https://drive.google.com/file/d/1Qv5JZes4qLRUJm32dwgxTimgkUUyF143/view?usp=sharing",
     lessonPlan: "https://htmlpreview.github.io/?https://github.com/miriacoelho/Programacao-das-aulas-2026_2/blob/master/index.html",
     materials: "https://drive.google.com/drive/folders/13e7H9g_e5qKq3bVkE8TmZP-YsFiLf_lm?usp=sharing",
@@ -134,7 +138,7 @@ export default function Home() {
               <strong>{item.short}</strong>
               <h3>{item.name}</h3>
               <p>{item.description}</p>
-              <span className="card-footer"><span>{item.key === "bda" ? "Semanas 1 a 3 disponíveis" : "Semanas 1 e 2 disponíveis"}</span><i>→</i></span>
+              <span className="card-footer"><span>Semanas 1 a 3 disponíveis</span><i>→</i></span>
             </button>
           ))}
         </div>
@@ -171,7 +175,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="release-note"><span>EM ANDAMENTO</span><p>{course.key === "bda" ? "As Semanas 1, 2 e 3 estão disponíveis." : "As Semanas 1 e 2 estão disponíveis."} As próximas semanas serão publicadas gradualmente pela professora.</p></div>
+        <div className="release-note"><span>EM ANDAMENTO</span><p>As Semanas 1, 2 e 3 estão disponíveis. As próximas semanas serão publicadas gradualmente pela professora.</p></div>
 
         <div className="weeks-meta"><span>{weeks.length} {weeks.length === 1 ? "semana encontrada" : "semanas"}</span><span>Selecione um card para abrir o conteúdo completo</span></div>
 
@@ -180,7 +184,7 @@ export default function Home() {
             {weeks.map(({ week, topic }) => {
               const image = `/conteudos/${course.key}/${course.imagePath(week)}`;
               const href = `/conteudos/${course.key}/${course.fileName(week)}`;
-              const available = course.key === "bda" ? 3 : 2;
+              const available = 3;
               return week <= available ? (
                 <a className="week-card" href={href} target="_blank" rel="noreferrer" key={`${course.key}-${week}`}>
                   <div className="week-image"><img src={image} alt="" loading="lazy" /><span>SEMANA {String(week).padStart(2, "0")}</span></div>
