@@ -76,7 +76,7 @@ export default function Home() {
 
   const weeks = useMemo(() => {
     const normalized = query.trim().toLocaleLowerCase("pt-BR");
-    return Array.from({ length: 20 }, (_, index) => ({ week: index + 1, topic: index === 0 ? course.topics[0] : `Semana ${index + 1}` }))
+    return Array.from({ length: 20 }, (_, index) => ({ week: index + 1, topic: course.topics[index] ?? `Semana ${index + 1}` }))
       .filter(({ week, topic }) => !normalized || topic.toLocaleLowerCase("pt-BR").includes(normalized) || String(week).includes(normalized));
   }, [course, query]);
 
@@ -134,7 +134,7 @@ export default function Home() {
               <strong>{item.short}</strong>
               <h3>{item.name}</h3>
               <p>{item.description}</p>
-              <span className="card-footer"><span>Semana 1 disponível</span><i>→</i></span>
+              <span className="card-footer"><span>{item.key === "bda" ? "Semanas 1 a 3 disponíveis" : "Semanas 1 e 2 disponíveis"}</span><i>→</i></span>
             </button>
           ))}
         </div>
@@ -171,7 +171,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="release-note"><span>EM ANDAMENTO</span><p>A Semana 1 está disponível. As próximas semanas serão publicadas gradualmente pela professora.</p></div>
+        <div className="release-note"><span>EM ANDAMENTO</span><p>{course.key === "bda" ? "As Semanas 1, 2 e 3 estão disponíveis." : "As Semanas 1 e 2 estão disponíveis."} As próximas semanas serão publicadas gradualmente pela professora.</p></div>
 
         <div className="weeks-meta"><span>{weeks.length} {weeks.length === 1 ? "semana encontrada" : "semanas"}</span><span>Selecione um card para abrir o conteúdo completo</span></div>
 
