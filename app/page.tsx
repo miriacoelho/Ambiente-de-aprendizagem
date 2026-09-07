@@ -107,6 +107,7 @@ export default function Home() {
           <a href="#disciplinas">Disciplinas</a>
           <a href="#semanas">Semanas</a>
           <a href="#planos">Planos</a>
+          <a href="/enade.html">ENADE</a>
           <span className="period">2026.2</span>
         </nav>
       </header>
@@ -129,6 +130,16 @@ export default function Home() {
           <div className="path-line line-two" />
           <div className="path-line line-three" />
         </div>
+      </section>
+
+      <section className="enade-callout" aria-labelledby="enade-title">
+        <div>
+          <span className="section-index">ENADE 2026 · ADS</span>
+          <h2 id="enade-title">Informação e preparação<br />em um só lugar.</h2>
+          <p>Editais, datas essenciais, orientações para o Questionário do Estudante e quatro simulados preparatórios.</p>
+        </div>
+        <div className="enade-date"><span>PROVA</span><strong>29 NOV</strong><small>Cadastro e questionário até 29/11</small></div>
+        <a href="/enade.html">Acessar portal ENADE <span>↗</span></a>
       </section>
 
       <section className="course-section" id="disciplinas">

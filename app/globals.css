@@ -26,6 +26,14 @@ a { color:inherit; text-decoration:none; }
 .primary-button { margin-top:24px; background:var(--ink); color:white; padding:16px 20px; display:inline-flex; align-items:center; gap:28px; font-size:13px; font-weight:700; border-radius:2px; transition:.2s ease; }
 .primary-button:hover { background:var(--green); transform:translateY(-2px); }
 .primary-button span { font-size:18px; }
+.enade-callout { margin:0; padding:48px 6vw; display:grid; grid-template-columns:1fr auto auto; align-items:center; gap:5vw; background:#15372b; color:#fff; border-bottom:1px solid rgba(255,255,255,.15); }
+.enade-callout .section-index { color:#9bc5ae; }
+.enade-callout h2 { font-family:Georgia,serif; font-size:clamp(30px,3.5vw,50px); line-height:1.04; font-weight:400; margin:12px 0; }
+.enade-callout p { max-width:620px; color:#c3d2ca; line-height:1.55; }
+.enade-date { padding:18px 28px; border-left:1px solid rgba(255,255,255,.2); border-right:1px solid rgba(255,255,255,.2); }
+.enade-date span,.enade-date small { display:block; color:#9bc5ae; font-size:10px; font-weight:800; letter-spacing:.1em; }
+.enade-date strong { display:block; font:400 34px Georgia,serif; margin:7px 0; }
+.enade-callout > a { display:flex; align-items:center; gap:20px; padding-bottom:7px; border-bottom:1px solid #9bc5ae; font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:.08em; }
 .hero-panel { position:relative; border-left:1px solid var(--line); background:linear-gradient(145deg,#dfe5d8,#ece6d9); overflow:hidden; min-height:560px; }
 .orbit { position:absolute; border:1px solid rgba(31,92,69,.22); border-radius:50%; }
 .orbit-one { width:500px; height:500px; left:8%; top:10%; }
@@ -112,7 +120,9 @@ footer .brand-mark { border-color:white; } footer small { color:#adb6b0!importan
 footer p { font-family:Georgia,serif; color:#c7cec9; font-style:italic; max-width:430px; line-height:1.5; }
 footer > a { font-size:11px; text-transform:uppercase; letter-spacing:.1em; border-bottom:1px solid #7c8881; padding-bottom:6px; }
 @media (max-width:1000px) { .hero { grid-template-columns:1fr; }.hero-panel { min-height:480px; border-left:0; border-top:1px solid var(--line); }.weeks-grid { grid-template-columns:repeat(3,1fr); }.course-grid { grid-template-columns:1fr; }.course-card { min-height:350px; }.section-heading { grid-template-columns:1fr; gap:15px; }.weeks-header { align-items:flex-start; flex-direction:column; }.search-box { width:100%; }.course-tabs button span { display:none; } }
+@media (max-width:900px) { .enade-callout { grid-template-columns:1fr; }.enade-date { border:0; border-top:1px solid rgba(255,255,255,.2); border-bottom:1px solid rgba(255,255,255,.2); padding:18px 0; }.enade-callout > a { width:max-content; } }
 @media (max-width:720px) { .topbar { height:74px; padding:0 20px; }.topbar nav a { display:none; }.brand small { display:none; }.hero-copy { padding:70px 22px 60px; }.hero h1 { font-size:50px; }.hero-panel { min-height:430px; }.path-card { width:160px; }.path-fbd { left:6%; }.path-ftw { right:5%; }.path-bda { left:12%; }.course-section,.weeks-section { padding:70px 22px; }.course-grid { border-left:0; }.course-card { padding:26px; border-left:1px solid var(--line); }.course-title-row { align-items:flex-start; }.course-monogram { width:58px; height:58px; flex:0 0 auto; font-size:17px; }.weeks-header h2 { font-size:31px; }.weeks-grid { grid-template-columns:1fr 1fr; }.weeks-meta span:last-child { display:none; }footer { grid-template-columns:1fr; text-align:left; } }
 @media (max-width:480px) { .hero h1 { font-size:43px; }.hero-panel { min-height:400px; }.path-card { width:145px; padding:14px; }.path-card b { font-size:28px; }.path-ftw { top:40%; }.path-bda { bottom:7%; }.weeks-grid { grid-template-columns:1fr; }.week-card { min-height:315px; }.week-image { height:185px; }.course-tabs button { justify-content:center; }.course-tabs button b { font-size:19px; }.section-heading h2 { font-size:38px; }.release-note { align-items:flex-start; flex-direction:column; gap:10px; } }
 @media (max-width:720px) { .plan-area,.plan-grid { grid-template-columns:1fr; } }
+@media (max-width:720px) { .enade-callout { padding:42px 22px; } }
 @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } * { transition:none!important; } }
