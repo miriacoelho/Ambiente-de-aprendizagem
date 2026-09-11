@@ -25,6 +25,7 @@ const topics: Record<CourseKey, string[]> = {
     "Projeto de BD",
     "Modelo Conceitual",
     "Modelo Conceitual",
+    "Atributos no Modelo Entidade-Relacionamento",
   ],
   ftw: [
     "Apresentação da disciplina e fundamentos da Web",
@@ -32,6 +33,7 @@ const topics: Record<CourseKey, string[]> = {
     "Formatação de textos, hipertextos, cabeçalhos e cores",
     "Formatação de textos, hipertextos, cabeçalhos e cores",
     "Formatação de textos, hipertextos, cabeçalhos e cores",
+    "Organização de Conteúdo em HTML",
   ],
   bda: [
     "Apresentação da disciplina e revisão de Banco de Dados",
@@ -39,6 +41,7 @@ const topics: Record<CourseKey, string[]> = {
     "Álgebra Relacional: Introdução e Seleção",
     "Álgebra Relacional – Seleção",
     "Álgebra Relacional – Projeção",
+    "Produto Cartesiano",
   ],
 };
 
@@ -48,7 +51,7 @@ const courses: Course[] = [
     description: "Da compreensão dos dados ao projeto conceitual, relacional e à linguagem SQL.",
     topics: topics.fbd,
     imagePath: (week) => week === 1 ? "imagens_semanas/semana1/semana1.png" : week === 2 ? "imagens_semanas/semana2_FBD.png" : `imagens_semanas/semana${week}.${week === 8 ? "jpg" : "png"}`,
-    fileName: (week) => week === 1 ? "semana1_FBD.html" : week === 2 ? "semana2_FBD.html" : week === 3 ? "semana3_FBD.html" : week === 4 ? "semana4_FBD.html" : "semana5_FBD.html",
+    fileName: (week) => week === 1 ? "semana1_FBD.html" : week === 2 ? "semana2_FBD.html" : week === 3 ? "semana3_FBD.html" : week === 4 ? "semana4_FBD.html" : week === 5 ? "semana5_FBD.html" : "semana6_FBD.html",
     teachingPlan: "https://drive.google.com/file/d/1beyevQXFKXc74sWogfu6L36Y4dj1L5ih/view?usp=sharing",
     lessonPlan: "https://htmlpreview.github.io/?https://github.com/miriacoelho/Programacao-das-aulas-2026_2/blob/master/index.html",
     materials: "https://drive.google.com/drive/folders/1hkFVuAtIoVwCqT2ISiwgHAOncIxlfp_q?usp=sharing",
@@ -58,7 +61,7 @@ const courses: Course[] = [
     description: "Uma jornada prática pelos fundamentos da web e pela construção de páginas com HTML.",
     topics: topics.ftw,
     imagePath: (week) => week === 1 ? "imagens_semanas/semana1/semana1.png" : `imagens_semanas/semana${week}.${week === 3 ? "webp" : "png"}`,
-    fileName: (week) => week === 1 ? "semana1_FTW.html" : week === 2 ? "semana2_FTW.html" : week === 3 ? "semana3_FTW.html" : week === 4 ? "semana4_FTW.html" : "semana5_FTW.html",
+    fileName: (week) => week === 1 ? "semana1_FTW.html" : week === 2 ? "semana2_FTW.html" : week === 3 ? "semana3_FTW.html" : week === 4 ? "semana4_FTW.html" : week === 5 ? "semana5_FTW.html" : "semana6_FTW.html",
     teachingPlan: "https://drive.google.com/file/d/1Qv5JZes4qLRUJm32dwgxTimgkUUyF143/view?usp=sharing",
     lessonPlan: "https://htmlpreview.github.io/?https://github.com/miriacoelho/Programacao-das-aulas-2026_2/blob/master/index.html",
     materials: "https://drive.google.com/drive/folders/13e7H9g_e5qKq3bVkE8TmZP-YsFiLf_lm?usp=sharing",
@@ -68,7 +71,7 @@ const courses: Course[] = [
     description: "Álgebra relacional e SQL aplicados à resolução de problemas reais com dados.",
     topics: topics.bda,
     imagePath: (week) => week === 1 ? "imagens_semanas/semana1/semana1.png" : week === 2 ? "imagens_semanas/semana2_BDA.png" : `imagens_semanas/semana${week}.${[15,17].includes(week) ? "avif" : [8,11].includes(week) ? "gif" : "png"}`,
-    fileName: (week) => week === 1 ? "semana1_BDA.html" : week === 2 ? "semana2_BDA.html" : week === 3 ? "semana3_BDA.html" : week === 4 ? "semana4_BDA.html" : "semana5_BDA.html",
+    fileName: (week) => week === 1 ? "semana1_BDA.html" : week === 2 ? "semana2_BDA.html" : week === 3 ? "semana3_BDA.html" : week === 4 ? "semana4_BDA.html" : week === 5 ? "semana5_BDA.html" : "semana6_BDA.html",
     teachingPlan: "https://drive.google.com/file/d/1QgT7ndx51gwf2OGeNqJ_9j8cmWjGHOsH/view?usp=sharing",
     lessonPlan: "https://htmlpreview.github.io/?https://github.com/miriacoelho/Programacao-das-aulas-2026_2/blob/master/index.html",
     materials: "https://drive.google.com/drive/folders/1LKAxf3nL0G0a9sw4n0V5WPF0fcgmKaLN?usp=sharing",
@@ -155,7 +158,7 @@ export default function Home() {
               <strong>{item.short}</strong>
               <h3>{item.name}</h3>
               <p>{item.description}</p>
-              <span className="card-footer"><span>Semanas 1 a 4 disponíveis</span><i>→</i></span>
+              <span className="card-footer"><span>Semanas 1 a 6 disponíveis</span><i>→</i></span>
             </button>
           ))}
         </div>
@@ -192,7 +195,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="release-note"><span>EM ANDAMENTO</span><p>As Semanas 1, 2, 3 e 4 estão disponíveis. As próximas semanas serão publicadas gradualmente pela professora.</p></div>
+        <div className="release-note"><span>EM ANDAMENTO</span><p>As Semanas 1 a 6 estão disponíveis. As próximas semanas serão publicadas gradualmente pela professora.</p></div>
 
         <div className="weeks-meta"><span>{weeks.length} {weeks.length === 1 ? "semana encontrada" : "semanas"}</span><span>Selecione um card para abrir o conteúdo completo</span></div>
 
@@ -201,7 +204,7 @@ export default function Home() {
             {weeks.map(({ week, topic }) => {
               const image = `/conteudos/${course.key}/${course.imagePath(week)}`;
               const href = `/conteudos/${course.key}/${course.fileName(week)}`;
-              const available = 5;
+              const available = 6;
               return week <= available ? (
                 <a className="week-card" href={href} target="_blank" rel="noreferrer" key={`${course.key}-${week}`}>
                   <div className="week-image"><img src={image} alt="" loading="lazy" /><span>SEMANA {String(week).padStart(2, "0")}</span></div>
