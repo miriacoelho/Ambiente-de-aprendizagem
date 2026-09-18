@@ -35,7 +35,7 @@ const topics: Record<CourseKey, string[]> = {
     "Formatação de textos, hipertextos, cabeçalhos e cores",
     "Formatação de textos, hipertextos, cabeçalhos e cores",
     "Organização de Conteúdo em HTML",
-    "Organização de Conteúdo em HTML",
+    "Conteúdo multimídia em HTML",
   ],
   bda: [
     "Apresentação da disciplina e revisão de Banco de Dados",
