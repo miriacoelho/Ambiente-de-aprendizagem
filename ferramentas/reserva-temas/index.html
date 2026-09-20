@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Temas do trabalho — Fundamentos de Banco de Dados</title>
+  <style>
+    :root { font-family: system-ui, sans-serif; color: #193047; background: #f3f6fa; }
+    body { margin: 0; padding: 24px; }
+    main { max-width: 800px; margin: auto; }
+    h1 { margin-bottom: 8px; }
+    p { line-height: 1.5; }
+    section { background: white; padding: 24px; margin: 20px 0; border-radius: 14px; box-shadow: 0 2px 12px #16345112; }
+    label { display: block; font-weight: 650; margin: 16px 0 6px; }
+    select, textarea, input { box-sizing: border-box; width: 100%; padding: 12px; border: 1px solid #9daebc; border-radius: 8px; font: inherit; }
+    textarea { min-height: 120px; resize: vertical; }
+    button { background: #1457a5; color: white; border: 0; padding: 12px 18px; border-radius: 8px; margin-top: 18px; font: inherit; font-weight: 650; cursor: pointer; }
+    button:disabled { opacity: .5; cursor: not-allowed; }
+    .note { background: #e8f2ff; padding: 12px; border-radius: 8px; }
+    .status { min-height: 1.5em; font-weight: 600; }
+    .code { font-family: monospace; overflow-wrap: anywhere; font-size: 1.15em; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Trabalho de Fundamentos de Banco de Dados</h1>
+  <p>Escolha um tema disponível e informe os integrantes. Cada tema pode ser reservado por apenas um grupo. A resposta do trabalho será enviada pelo Google Forms indicado pelo docente.</p>
+  <section>
+    <h2>Reservar tema</h2>
+    <form id="reserva">
+      <label for="tema">Tema</label>
+      <select id="tema" required><option value="">Carregando temas...</option></select>
+      <label for="integrantes">Integrantes do grupo</label>
+      <textarea id="integrantes" maxlength="1000" required placeholder="Um nome por linha; inclua matrícula se o docente solicitar"></textarea>
+      <button id="reservar">Reservar tema</button>
+    </form>
+    <p id="reserva-status" class="status" role="status"></p>
+  </section>
+</main>
+<script>
+  const $ = id => document.getElementById(id);
+  async function request(url, options) {
+    const response = await fetch(url, options);
+    const data = await response.json();
+    if (!response.ok) throw new Error(data.erro || 'Falha na comunicação.');
+    return data;
+  }
+  async function carregarTemas() {
+    try {
+      const temas = await request('/api/temas');
+      $('tema').replaceChildren(new Option('Selecione um tema disponível', ''));
+      for (const tema of temas) $('tema').add(new Option(tema.nome + (tema.ocupado ? ' — reservado' : ''), tema.id, false, false));
+      for (let i = 1; i < $('tema').options.length; i++) $('tema').options[i].disabled = Boolean(temas[i - 1].ocupado);
+    } catch (e) { $('reserva-status').textContent = e.message; }
+  }
+  $('reserva').addEventListener('submit', async event => {
+    event.preventDefault();
+    $('reservar').disabled = true;
+    $('reserva-status').textContent = '';
+    try {
+      const data = await request('/api/reservar', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ temaId: $('tema').value, integrantes: $('integrantes').value }) });
+      $('reserva-status').textContent = data.mensagem;
+      $('reserva').reset();
+      await carregarTemas();
+    } catch (e) { $('reserva-status').textContent = e.message; await carregarTemas(); }
+    finally { $('reservar').disabled = false; }
+  });
+  carregarTemas();
+</script>
+</body>
+</html>
