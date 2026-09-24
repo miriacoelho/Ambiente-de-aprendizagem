@@ -1,0 +1,102 @@
+<div style="border:2px solid #e5e7eb;background:#f9fafc; padding:20px; border-radius:12px; margin-bottom:20px; border-left:2px solid #1e3a8a;">
+
+<h3 style="color:#1e3a8a;">💻 Prática Guiada em SQL – INNER JOIN</h3>
+
+<p>
+Nesta atividade prática, você irá aprender como utilizar <strong>INNER JOIN</strong> no banco de dados EMPRESA.
+</p>
+
+<!-- PASSO 1 -->
+<div style="background:#eef2ff; padding:12px; border-radius:10px; margin-top:15px;">
+<strong>📘 Passo 1 – Baixe e execute o script do banco de dados Empresa</strong>
+
+<p>Execute o script do link abaixo no mysql:</p>
+
+
+<p>🔎 Script banco de dadados <a href='https://drive.google.com/file/d/1bex_QttIJC32d-czFJoYljrXYYZBdZtl/view?usp=sharing'>Empresa</a></p>
+</div>
+<!-- PASSO 2 -->
+<div style="background:#eef2ff; padding:12px; border-radius:10px; margin-top:15px;">
+<strong>📘 Passo 2 – Execute o produto cartesiano</strong>
+
+<p>Execute a consulta abaixo:</p>
+
+<pre style="background:#111827;color:#fff;padding:10px;border-radius:8px;">
+SELECT *
+FROM funcionario, departamento;
+</pre>
+
+<p>🔎 Observe: o número de linhas será muito grande.</p>
+</div>
+
+<!-- PASSO 3 -->
+<div style="background:#ffffff; padding:12px; border-radius:10px; margin-top:15px; border:1px solid #e5e7eb;">
+<strong>🔍 Passo 3 – Filtrando com WHERE</strong>
+
+<pre style="background:#111827;color:#fff;padding:10px;border-radius:8px;">
+SELECT *
+FROM funcionario f, departamento d
+WHERE f.dnr = d.dnumero;
+</pre>
+
+<p>💡 Agora os dados começam a fazer sentido.</p>
+</div>
+
+<!-- PASSO 4 -->
+<div style="background:#eef2ff; padding:12px; border-radius:10px; margin-top:15px;">
+<strong>🔗 Passo 4 – Usando INNER JOIN</strong>
+
+<pre style="background:#111827;color:#fff;padding:10px;border-radius:8px;">
+SELECT *
+FROM funcionario f
+INNER JOIN departamento d
+ON f.dnr = d.dnumero;
+</pre>
+
+<p>✅ Mesmo resultado, porém com sintaxe mais clara e recomendada.</p>
+</div>
+
+<!-- PASSO 5 -->
+<div style="background:#ffffff; padding:12px; border-radius:10px; margin-top:15px; border:1px solid #e5e7eb;">
+<strong>📊 Passo 5 – Selecionando colunas específicas</strong>
+
+<pre style="background:#111827;color:#fff;padding:10px;border-radius:8px;">
+SELECT f.pnome, d.dnome
+FROM funcionario f
+INNER JOIN departamento d
+ON f.dnr = d.dnumero;
+</pre>
+</div>
+
+<!-- PASSO 6 -->
+<div style="background:#eef2ff; padding:12px; border-radius:10px; margin-top:15px;">
+<strong>👨‍👩‍👧 Passo 6 – Novo JOIN (dependentes)</strong>
+
+<pre style="background:#111827;color:#fff;padding:10px;border-radius:8px;">
+SELECT f.pnome, d.nome_dependente
+FROM funcionario f
+INNER JOIN dependente d
+ON f.cpf = d.fcpf;
+</pre>
+</div>
+
+<!-- DESAFIO -->
+<div style="background:#ffffff; border:2px dashed #1e3a8a; padding:12px; border-radius:10px; margin-top:20px;">
+<strong>🎯 Desafio Final</strong>
+
+<p>
+Crie uma consulta que retorne:
+</p>
+
+<ul>
+<li>Nome do funcionário</li>
+<li>Nome do departamento</li>
+<li>Nome do dependente</li>
+</ul>
+
+<p style="color:#6b7280;">
+💡 Você precisará usar <strong>2 INNER JOIN</strong>.
+</p>
+</div>
+
+</div>
