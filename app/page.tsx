@@ -28,6 +28,7 @@ const topics: Record<CourseKey, string[]> = {
     "Atributos no Modelo Entidade-Relacionamento",
     "Diagrama Entidade-Relacionamento (DER)",
     "Diagrama Entidade-Relacionamento (DER)",
+    "Generalização e Especialização",
   ],
   ftw: [
     "Apresentação da disciplina e fundamentos da Web",
@@ -38,6 +39,8 @@ const topics: Record<CourseKey, string[]> = {
     "Réguas e listas",
     "Imagens e vídeos",
     "Conteúdo multimídia em HTML",
+    "",
+    "Links internos: navegação dentro da página",
   ],
   bda: [
     "Apresentação da disciplina e revisão de Banco de Dados",
@@ -48,6 +51,7 @@ const topics: Record<CourseKey, string[]> = {
     "Produto Cartesiano",
     "Produto Cartesiano",
     "Junção Interna (INNER JOIN)",
+    "Junção Interna (INNER JOIN)",
   ],
 };
 
@@ -57,7 +61,7 @@ const courses: Course[] = [
     description: "Da compreensão dos dados ao projeto conceitual, relacional e à linguagem SQL.",
     topics: topics.fbd,
     imagePath: (week) => week === 1 ? "imagens_semanas/semana1/semana1.png" : week === 2 ? "imagens_semanas/semana2_FBD.png" : `imagens_semanas/semana${week}.${week === 8 ? "jpg" : "png"}`,
-    fileName: (week) => week === 1 ? "semana1_FBD.html" : week === 2 ? "semana2_FBD.html" : week === 3 ? "semana3_FBD.html" : week === 4 ? "semana4_FBD.html" : week === 5 ? "semana5_FBD.html" : week === 6 ? "semana6_FBD.html" : week === 7 ? "semana7_FBD.html" : "semana8_FBD.html",
+    fileName: (week) => `semana${week}_FBD.html`,
     teachingPlan: "https://drive.google.com/file/d/1beyevQXFKXc74sWogfu6L36Y4dj1L5ih/view?usp=sharing",
     lessonPlan: "https://htmlpreview.github.io/?https://github.com/miriacoelho/Programacao-das-aulas-2026_2/blob/master/index.html",
     materials: "https://drive.google.com/drive/folders/1hkFVuAtIoVwCqT2ISiwgHAOncIxlfp_q?usp=sharing",
@@ -67,7 +71,7 @@ const courses: Course[] = [
     description: "Uma jornada prática pelos fundamentos da web e pela construção de páginas com HTML.",
     topics: topics.ftw,
     imagePath: (week) => week === 1 ? "imagens_semanas/semana1/semana1.png" : week === 7 ? "imagens_semanas/semana8.png" : week === 8 ? "imagens_semanas/semana9.png" : `imagens_semanas/semana${week}.${week === 3 ? "webp" : "png"}`,
-    fileName: (week) => week === 1 ? "semana1_FTW.html" : week === 2 ? "semana2_FTW.html" : week === 3 ? "semana3_FTW.html" : week === 4 ? "semana4_FTW.html" : week === 5 ? "semana5_FTW.html" : week === 6 ? "semana6_FTW.html" : week === 7 ? "semana7_FTW.html" : "semana8_FTW.html",
+    fileName: (week) => `semana${week}_FTW.html`,
     teachingPlan: "https://drive.google.com/file/d/1Qv5JZes4qLRUJm32dwgxTimgkUUyF143/view?usp=sharing",
     lessonPlan: "https://htmlpreview.github.io/?https://github.com/miriacoelho/Programacao-das-aulas-2026_2/blob/master/index.html",
     materials: "https://drive.google.com/drive/folders/13e7H9g_e5qKq3bVkE8TmZP-YsFiLf_lm?usp=sharing",
@@ -77,7 +81,7 @@ const courses: Course[] = [
     description: "Álgebra relacional e SQL aplicados à resolução de problemas reais com dados.",
     topics: topics.bda,
     imagePath: (week) => week === 1 ? "imagens_semanas/semana1/semana1.png" : week === 2 ? "imagens_semanas/semana2_BDA.png" : `imagens_semanas/semana${week}.${[15,17].includes(week) ? "avif" : [8,11].includes(week) ? "gif" : "png"}`,
-    fileName: (week) => week === 1 ? "semana1_BDA.html" : week === 2 ? "semana2_BDA.html" : week === 3 ? "semana3_BDA.html" : week === 4 ? "semana4_BDA.html" : week === 5 ? "semana5_BDA.html" : week === 6 ? "semana6_BDA.html" : week === 7 ? "semana7_BDA.html" : "semana8_BDA.html",
+    fileName: (week) => `semana${week}_BDA.html`,
     teachingPlan: "https://drive.google.com/file/d/1QgT7ndx51gwf2OGeNqJ_9j8cmWjGHOsH/view?usp=sharing",
     lessonPlan: "https://htmlpreview.github.io/?https://github.com/miriacoelho/Programacao-das-aulas-2026_2/blob/master/index.html",
     materials: "https://drive.google.com/drive/folders/1LKAxf3nL0G0a9sw4n0V5WPF0fcgmKaLN?usp=sharing",
@@ -95,7 +99,10 @@ export default function Home() {
 
   const weeks = useMemo(() => {
     const normalized = query.trim().toLocaleLowerCase("pt-BR");
-    return Array.from({ length: 20 }, (_, index) => ({ week: index + 1, topic: course.topics[index] ?? `Semana ${index + 1}` }))
+    const weekNumbers = course.key === "ftw"
+      ? [1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+      : Array.from({ length: 20 }, (_, index) => index + 1);
+    return weekNumbers.map((week) => ({ week, topic: course.topics[week - 1] || `Semana ${week}` }))
       .filter(({ week, topic }) => !normalized || topic.toLocaleLowerCase("pt-BR").includes(normalized) || String(week).includes(normalized));
   }, [course, query]);
 
@@ -164,7 +171,7 @@ export default function Home() {
               <strong>{item.short}</strong>
               <h3>{item.name}</h3>
               <p>{item.description}</p>
-              <span className="card-footer"><span>Semanas 1 a 8 disponíveis</span><i>→</i></span>
+              <span className="card-footer"><span>{item.key === "ftw" ? "Semanas 1 a 8 e 10 disponíveis" : "Semanas 1 a 9 disponíveis"}</span><i>→</i></span>
             </button>
           ))}
         </div>
@@ -201,7 +208,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="release-note"><span>EM ANDAMENTO</span><p>As Semanas 1 a 8 estão disponíveis. As próximas semanas serão publicadas gradualmente pela professora.</p></div>
+        <div className="release-note"><span>EM ANDAMENTO</span><p>{course.key === "ftw" ? "As Semanas 1 a 8 e 10 estão disponíveis. A numeração segue o calendário atualizado de FTW." : "As Semanas 1 a 9 estão disponíveis. As próximas semanas serão publicadas gradualmente pela professora."}</p></div>
 
         <div className="weeks-meta"><span>{weeks.length} {weeks.length === 1 ? "semana encontrada" : "semanas"}</span><span>Selecione um card para abrir o conteúdo completo</span></div>
 
@@ -210,8 +217,8 @@ export default function Home() {
             {weeks.map(({ week, topic }) => {
               const image = `/conteudos/${course.key}/${course.imagePath(week)}`;
               const href = `/conteudos/${course.key}/${course.fileName(week)}`;
-              const available = 8;
-              return week <= available ? (
+              const available = course.key === "ftw" ? week <= 8 || week === 10 : week <= 9;
+              return available ? (
                 <a className="week-card" href={href} target="_blank" rel="noreferrer" key={`${course.key}-${week}`}>
                   <div className="week-image"><img src={image} alt="" loading="lazy" /><span>SEMANA {String(week).padStart(2, "0")}</span></div>
                   <div className="week-content"><h3>{topic}</h3><span className="open-label">Abrir conteúdo <i>↗</i></span></div>
