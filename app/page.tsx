@@ -29,6 +29,8 @@ const topics: Record<CourseKey, string[]> = {
     "Diagrama Entidade-Relacionamento (DER)",
     "Diagrama Entidade-Relacionamento (DER)",
     "Generalização e Especialização",
+    "Feriado e recesso — não haverá aula",
+    "Transformação ER → Relacional",
   ],
   ftw: [
     "Apresentação da disciplina e fundamentos da Web",
@@ -40,7 +42,8 @@ const topics: Record<CourseKey, string[]> = {
     "Imagens e vídeos",
     "Conteúdo multimídia em HTML",
     "",
-    "Links internos: navegação dentro da página",
+    "Feriado e recesso — não haverá aula",
+    "Links externos: conectando a Web",
   ],
   bda: [
     "Apresentação da disciplina e revisão de Banco de Dados",
@@ -52,6 +55,8 @@ const topics: Record<CourseKey, string[]> = {
     "Produto Cartesiano",
     "Junção Interna (INNER JOIN)",
     "Junção Interna (INNER JOIN)",
+    "Feriado e recesso — não haverá aula",
+    "Junção Externa (OUTER JOIN)",
   ],
 };
 
@@ -60,7 +65,7 @@ const courses: Course[] = [
     key: "fbd", short: "FBD", name: "Fundamentos de Banco de Dados", eyebrow: "Estruturar",
     description: "Da compreensão dos dados ao projeto conceitual, relacional e à linguagem SQL.",
     topics: topics.fbd,
-    imagePath: (week) => week === 1 ? "imagens_semanas/semana1/semana1.png" : week === 2 ? "imagens_semanas/semana2_FBD.png" : `imagens_semanas/semana${week}.${week === 8 ? "jpg" : "png"}`,
+    imagePath: (week) => week === 1 ? "imagens_semanas/semana1/semana1.png" : week === 2 ? "imagens_semanas/semana2_FBD.png" : week === 11 ? "imagens_semanas/semana12.png" : `imagens_semanas/semana${week}.${week === 8 ? "jpg" : "png"}`,
     fileName: (week) => `semana${week}_FBD.html`,
     teachingPlan: "https://drive.google.com/file/d/1beyevQXFKXc74sWogfu6L36Y4dj1L5ih/view?usp=sharing",
     lessonPlan: "https://htmlpreview.github.io/?https://github.com/miriacoelho/Programacao-das-aulas-2026_2/blob/master/index.html",
@@ -171,7 +176,7 @@ export default function Home() {
               <strong>{item.short}</strong>
               <h3>{item.name}</h3>
               <p>{item.description}</p>
-              <span className="card-footer"><span>{item.key === "ftw" ? "Semanas 1 a 8 e 10 disponíveis" : "Semanas 1 a 9 disponíveis"}</span><i>→</i></span>
+              <span className="card-footer"><span>{item.key === "ftw" ? "Semanas 1 a 8, 10 e 11 disponíveis" : "Semanas 1 a 11 disponíveis"}</span><i>→</i></span>
             </button>
           ))}
         </div>
@@ -208,16 +213,16 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="release-note"><span>EM ANDAMENTO</span><p>{course.key === "ftw" ? "As Semanas 1 a 8 e 10 estão disponíveis. A numeração segue o calendário atualizado de FTW." : "As Semanas 1 a 9 estão disponíveis. As próximas semanas serão publicadas gradualmente pela professora."}</p></div>
+        <div className="release-note"><span>EM ANDAMENTO</span><p>{course.key === "ftw" ? "As Semanas 1 a 8, 10 e 11 estão disponíveis. A numeração segue o calendário atualizado de FTW." : "As Semanas 1 a 11 estão disponíveis. As próximas semanas serão publicadas gradualmente pela professora."}</p></div>
 
         <div className="weeks-meta"><span>{weeks.length} {weeks.length === 1 ? "semana encontrada" : "semanas"}</span><span>Selecione um card para abrir o conteúdo completo</span></div>
 
         {weeks.length > 0 ? (
           <div className="weeks-grid">
             {weeks.map(({ week, topic }) => {
-              const image = `/conteudos/${course.key}/${course.imagePath(week)}`;
+              const image = week === 10 ? "/conteudos/imagens/Aviso%20Escolar_%20Bom%20Feriado%20a%20Todos!.png" : `/conteudos/${course.key}/${course.imagePath(week)}`;
               const href = `/conteudos/${course.key}/${course.fileName(week)}`;
-              const available = course.key === "ftw" ? week <= 8 || week === 10 : week <= 9;
+              const available = course.key === "ftw" ? week <= 8 || week === 10 || week === 11 : week <= 11;
               return available ? (
                 <a className="week-card" href={href} target="_blank" rel="noreferrer" key={`${course.key}-${week}`}>
                   <div className="week-image"><img src={image} alt="" loading="lazy" /><span>SEMANA {String(week).padStart(2, "0")}</span></div>
