@@ -1,0 +1,246 @@
+<div style="font-family:'Segoe UI', Arial, sans-serif; max-width:820px; margin:auto; line-height:1.75; color:#111827;">
+
+    <!-- ================= CABEÇALHO DA DISCIPLINA ================= -->
+    <div style="border:2px solid #e5e7eb;background:#f9fafc; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 6px rgba(0,0,0,0.05); border-left:2px solid #1e3a8a;">
+        <div style="display:flex; align-items:flex-start; gap:12px;">
+
+            <div style="min-width:44px; height:44px; border-radius:10px; background:#eef2ff; display:flex; align-items:center; justify-content:center; font-weight:800; color:#3730a3;">
+                BDA
+            </div>
+
+            <div style="flex:1;">
+                <div style="font-size:19px; font-weight:900; color:#111827; margin:0 0 6px 0;">Revisão para a Atividade Avaliativa – SQL e Álgebra Relacional</div>
+
+                <div style="font-size:14px; color:#6b7280;">
+                    Prof.(a) Miriã Corrêa
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ================= BOAS-VINDAS ================= -->
+    <div style="border:2px solid #e5e7eb;background:#f9fafc; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 6px rgba(0,0,0,0.05); border-left:2px solid #1e3a8a;">
+
+        <details open="">
+            <summary style="list-style:none;cursor:pointer; font-weight:700; color:#1e3a8a; font-size:16px;">
+                <h3 style="margin-top:0; color:#1e3a8a;">🚀 Revisão: consultas com junções</h3>
+            </summary>
+
+            <p>
+                Nesta semana, vamos revisar <strong>consultas em SQL e álgebra relacional, envolvendo junções entre tabelas</strong>, para a atividade avaliativa.
+            </p>
+
+            <div style="background:#eef2ff;border:1px solid #c7d2fe;padding:14px;border-radius:12px;font-size:18px;color:#1e3a8a;">
+                💡 Antes de escrever a consulta, identifique <strong>o que retornar, quais tabelas relacionar e quais condições aplicar</strong>.
+            </div>
+
+            <p>
+                O foco será <strong>interpretar os enunciados, construir as consultas e conferir os resultados</strong>, retomando as diferenças entre junções internas e externas.
+            </p>
+
+            <h4 style="color:#1e3a8a;">Pontos de atenção na revisão</h4>
+            <dl>
+                <dd>✔ Definir corretamente a condição de junção entre as tabelas.</dd>
+                <dd>✔ Escolher a junção conforme os registros que precisam aparecer.</dd>
+                <dd>✔ Diferenciar seleção de linhas, projeção de colunas e junção.</dd>
+            </dl>
+
+            <p><strong>💻 Exemplo de revisão em SQL e álgebra relacional:</strong></p>
+            <pre style="background:#111827;color:#fff;padding:12px;border-radius:10px;">-- Tabelas usadas neste exemplo:
+-- FUNCIONARIO(Id, Nome, Depto)
+-- DEPARTAMENTO(Num, Nome); Num é a chave primária.
+
+-- 1. SQL: funcionários vinculados ao departamento TI
+SELECT DISTINCT F.Nome, D.Nome AS Departamento
+FROM FUNCIONARIO F
+INNER JOIN DEPARTAMENTO D ON F.Depto = D.Num
+WHERE D.Nome = 'TI';
+
+-- Álgebra relacional: mesma consulta
+-- F = ρ_F(FUNCIONARIO); D = ρ_D(DEPARTAMENTO)
+-- As chaves { } indicam atributos ou condições do operador.
+π_{F.Nome, D.Nome}(
+  σ_{D.Nome = 'TI'}(F ⋈_{F.Depto = D.Num} D)
+)
+
+-- 2. SQL: todos os funcionários, com ou sem departamento
+SELECT F.Id, F.Nome, D.Nome AS Departamento
+FROM FUNCIONARIO F
+LEFT JOIN DEPARTAMENTO D ON F.Depto = D.Num;
+
+-- Para listar apenas os funcionários sem correspondência,
+-- acrescente WHERE D.Num IS NULL antes do ponto e vírgula.
+</pre>
+
+
+
+            <div style="border-top:1px solid #e5e7eb; margin-top:15px; padding-top:15px; text-align:center;">
+
+                <img src="https://raw.githubusercontent.com/miriacoelho/Ambiente-de-aprendizagem/refs/heads/main/public/conteudos/bda/imagens_semanas/semana12_2.png" alt="" width="612" height="720" role="presentation" style="width:60%; max-width:420px; height:auto; border-radius:12px; display:inline-block;" class="img-fluid atto_image_button_middle">
+                <div style="border-top:1px solid #e5e7eb; margin-top:15px; padding-top:15px; text-align:center;">
+                </div>
+            </div>
+
+            <br>
+
+            <div style="background:#eef2ff; border:1px solid #c7d2fe; padding:14px 16px; border-radius:12px; margin-bottom:20px; font-size:18px; color:#1e3a8a;">
+                <strong>ℹ️ Como navegar:</strong> Clique no título de cada card (🚀 📚 🧠 📝 🔗 🧩 🎯) para acessar os conteúdos da revisão.
+            </div>
+        </details>
+    </div>
+
+
+    <!-- ================= CONTEÚDO DA SEMANA ================= -->
+    <div style="border:2px solid #e5e7eb;background:#f9fafc; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 6px rgba(0,0,0,0.05); border-left:2px solid #1e3a8a;">
+
+        <details>
+            <summary style="list-style:none;cursor:pointer; font-weight:700; color:#1e3a8a; font-size:16px;">
+                <h3 style="margin-top:0; color:#1e3a8a;">📚 Conteúdos da revisão</h3>
+            </summary>
+
+            <dl>
+                <dd>📌 Interpretação de enunciados e identificação das tabelas.</dd>
+                <dd>📌 Consultas SQL: SELECT, FROM, WHERE, DISTINCT e aliases.</dd>
+                <dd>📌 Álgebra relacional: seleção (σ), projeção (π) e junção (⋈).</dd>
+                <dd>📌 Junção interna (INNER JOIN) e condições de relacionamento.</dd>
+                <dd>📌 Registros sem correspondência e uso de IS NULL.</dd>
+                <dd>📌 Correspondência entre SQL e álgebra relacional e análise dos resultados.</dd>
+            </dl>
+
+        </details>
+    </div>
+
+
+    <!-- Como estudar (passo a passo) -->
+    <!-- ================= COMO ESTUDAR ================= -->
+    <div style="border:2px solid #e5e7eb;background:#f9fafc; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 6px rgba(0,0,0,0.05); border-left:2px solid #1e3a8a;">
+
+        <details>
+            <summary style="list-style:none;cursor:pointer; font-weight:700; color:#1e3a8a; font-size:16px;">
+                <h3 style="margin-top:0; color:#1e3a8a;">🧠 Como estudar nesta semana</h3>
+            </summary>
+
+            <div style="margin-top:10px;">
+                <strong>1º Interprete o enunciado</strong>
+                <p>Identifique as informações solicitadas, as tabelas envolvidas e os filtros necessários. Verifique quais atributos permitem relacionar as tabelas.</p>
+
+                <strong>2º Escreva a consulta SQL</strong>
+                <p>Use aliases para identificar as tabelas e escreva a condição de junção. A INNER JOIN retorna as correspondências; LEFT e RIGHT JOIN também preservam os registros do lado indicado, mesmo sem correspondência.</p>
+
+                <strong>3º Relacione SQL e álgebra relacional</strong>
+                <p>Nas consultas com junção interna, represente o relacionamento pela junção (⋈), os filtros pela seleção (σ) e as colunas pela projeção (π). A projeção elimina duplicatas; em SQL, use DISTINCT quando precisar desse mesmo resultado. Junções externas fazem parte da álgebra relacional estendida.</p>
+
+                <strong>4º Execute e confira os resultados</strong>
+                <p>Teste as consultas no MySQL e confira quais registros aparecem. Use IS NULL para verificar a ausência de correspondência. Em junções externas, observe se um filtro no WHERE elimina registros que você pretendia preservar.</p>
+            </div>
+        </details>
+    </div>
+
+
+    <!-- ================= MATERIAIS ================= -->
+    <div style="border:2px solid #e5e7eb;background:#f9fafc; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 6px rgba(0,0,0,0.05); border-left:2px solid #1e3a8a;">
+        <details>
+            <summary style="list-style:none;cursor:pointer; font-weight:700; color:#1e3a8a; font-size:16px;">
+                <h3 style="margin-top:0; color:#1e3a8a;">📝 Materiais da semana</h3>
+            </summary>
+
+            <!-- Material 1 --> <a href="https://drive.google.com/drive/folders/1LKAxf3nL0G0a9sw4n0V5WPF0fcgmKaLN?usp=drive_link" target="_blank" style="text-decoration: none">
+                <div style="text-decoration: none; display: flex; border: 1px solid rgb(229, 231, 235); border-radius: 12px; padding: 12px; margin: 10px 0px; background: rgb(255, 255, 255); align-items: center; gap: 10px;"><img src="https://cdn-icons-png.flaticon.com/512/5994/5994710.png" width="26">
+                    <div style="flex:1;">
+                        <div style="font-weight:900; color:#0f172a; font-size:16px;">Slides</div>
+                        <div style="color:#6b7280; font-size:13px;">Slides dos conteúdos.</div>
+                    </div>
+                    <div style="font-size:18px; color:#1e3a8a; font-weight:900;">›</div>
+                </div>
+            </a>
+        </details>
+    </div>
+    <!-- ================= LINKS ÚTEIS ================= -->
+    <div style="border:2px solid #e5e7eb;background:#f9fafc; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 6px rgba(0,0,0,0.05); border-left:2px solid #1e3a8a;">
+
+        <details>
+
+            <summary style="list-style:none;cursor:pointer; font-weight:700; color:#1e3a8a; font-size:16px;">
+                <h3 style="margin-top:0; color:#1e3a8a;">🔗 Links úteis</h3>
+            </summary>
+
+            <!-- Link 1 -->
+            <a href="https://drive.google.com/file/d/188C6Mxpnh1kxxHPG8HDr-cc3lhn6FNDQ/view?usp=sharing" style="display:block; text-decoration:none; border:1px solid #e5e7eb; border-radius:12px; padding:12px; margin:10px 0; background:#ffffff;">
+                <div style="display:flex; align-items:center; gap:10px;">
+                    <img src="https://cdn-icons-png.flaticon.com/512/4649/4649581.png" alt="" width="26" height="26" role="presentation" class="img-fluid atto_image_button_middle">
+                    <div style="flex:1;">
+                        <div style="font-weight:900; color:#0f172a; font-size:14px;">
+                            Revisão Álgebra Relacional e SQL
+                        </div>
+                        <div style="color:#6b7280; font-size:13px;">
+                            Material Complementar.
+                        </div>
+                    </div>
+                    <div style="font-size:18px; color:#1e3a8a; font-weight:900;">›</div>
+                </div>
+            </a>
+        </details>
+    </div>
+
+    <!-- ================= ATIVIDADE ================= -->
+    <div style="border:2px solid #e5e7eb;background:#f9fafc; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 6px rgba(0,0,0,0.05); border-left:2px solid #1e3a8a;">
+        <details open="">
+            <summary style="list-style:none;cursor:pointer; font-weight:700; color:#1e3a8a; font-size:16px;">
+                <h3 style="margin-top:0; color:#1e3a8a;">
+                    🧩 Atividade da semana
+                </h3>
+            </summary>
+
+            <p style="margin:0 0 12px 0; text-align:justify; color:#374151;">
+                Após estudar os conceitos apresentados e ler o material complementar, faça o exercício proposto.
+            </p>
+
+            <a href="https://docs.google.com/document/d/1Di09Ou28DLRNJMcX0oa-FDrOwa-VOlULcLTYbIwCqsc/edit?usp=sharing" target="_blank" rel="noopener" style="
+display:inline-flex;
+align-items:center;
+gap:10px;
+text-decoration:none;
+background:linear-gradient(135deg, #1e3a8a, #172554);
+color:#ffffff;
+font-weight:900;
+padding:10px 14px;
+border-radius:14px;
+font-size:17px;
+box-shadow:0 6px 18px rgba(30, 58, 138, 0.5);
+letter-spacing:0.5px;
+"> 📝 Exercício</a>
+            <a href="https://docs.google.com/document/d/1oaghxxHjLgyeo77yYIJEQQs-CgTV5yI-cg_YTXYUDpw/edit?usp=sharing" target="_blank" rel="noopener" style="
+display:inline-flex;
+align-items:center;
+gap:10px;
+text-decoration:none;
+background:linear-gradient(135deg, #06402b, #26503a);
+color:#ffffff;
+font-weight:900;
+padding:10px 14px;
+border-radius:14px;
+font-size:17px;
+box-shadow:0 6px 18px rgba(30, 58, 138, 0.5);
+letter-spacing:0.5px;
+">✅Resposta 1</a>
+        </details>
+    </div>
+
+
+    <!-- ================= ENCERRAMENTO ================= -->
+    <div style="border:2px solid #e5e7eb;background:#f9fafc; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 6px rgba(0,0,0,0.05); border-left:2px solid #1e3a8a;">
+        <details>
+            <summary style="list-style:none;cursor:pointer; font-weight:700; color:#1e3a8a; font-size:16px;">
+                <h3 style="margin-top:0; color:#1e3a8a;">🎯 Encerramento</h3>
+            </summary>
+
+            <div style="color:#6b7280; font-size:13px;">
+                <p>
+                    A junção externa é fundamental para análises completas, pois garante que nenhuma informação importante seja perdida por falta de correspondência entre tabelas.
+                </p>
+                <p align="justify"><img src="https://raw.githubusercontent.com/miriacoelho/Ambiente-de-aprendizagem/main/public/conteudos/bda/imagens_semanas/semana1/img_encerramento.gif" alt="" width="192" height="79" role="presentation" class="img-fluid atto_image_button_text-bottom"><br></p>
+            </div>
+        </details>
+    </div>
+</div>

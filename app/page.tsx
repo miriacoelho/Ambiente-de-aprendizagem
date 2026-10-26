@@ -31,6 +31,7 @@ const topics: Record<CourseKey, string[]> = {
     "Generalização e Especialização",
     "Feriado e recesso — não haverá aula",
     "Transformação ER → Relacional",
+    "Introdução à SQL e Estrutura de Bancos de Dados",
   ],
   ftw: [
     "Apresentação da disciplina e fundamentos da Web",
@@ -44,6 +45,7 @@ const topics: Record<CourseKey, string[]> = {
     "",
     "Feriado e recesso — não haverá aula",
     "Links externos: conectando a Web",
+    "Trabalhando com Frames no HTML",
   ],
   bda: [
     "Apresentação da disciplina e revisão de Banco de Dados",
@@ -56,6 +58,7 @@ const topics: Record<CourseKey, string[]> = {
     "Junção Interna (INNER JOIN)",
     "Junção Interna (INNER JOIN)",
     "Feriado e recesso — não haverá aula",
+    "Junção Externa (OUTER JOIN)",
     "Junção Externa (OUTER JOIN)",
   ],
 };
@@ -107,8 +110,23 @@ export default function Home() {
     const weekNumbers = course.key === "ftw"
       ? [1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
       : Array.from({ length: 20 }, (_, index) => index + 1);
-    return weekNumbers.map((week) => ({ week, topic: course.topics[week - 1] || `Semana ${week}` }))
-      .filter(({ week, topic }) => !normalized || topic.toLocaleLowerCase("pt-BR").includes(normalized) || String(week).includes(normalized));
+    const cards = weekNumbers.flatMap((week) => {
+      const card = { week, topic: course.topics[week - 1] || `Semana ${week}` };
+      if (course.key === "fbd" && week === 11) {
+        return [
+          { ...card, part: 1 },
+          { week, part: 2, topic: "Relacionamentos de Grau > 2 e Generalização/Especialização", fileName: "semana11_2_FBD.html", imagePath: "imagens_semanas/semana13.png" },
+        ];
+      }
+      if (course.key === "bda" && week === 12) {
+        return [
+          { ...card, part: 1, imagePath: "imagens_semanas/semana11.gif" },
+          { week, part: 2, topic: "Revisão: consultas com junções", fileName: "semana12_2_BDA.html", imagePath: "imagens_semanas/semana12_2.png" },
+        ];
+      }
+      return [card];
+    });
+    return cards.filter(({ week, topic }) => !normalized || topic.toLocaleLowerCase("pt-BR").includes(normalized) || String(week).includes(normalized));
   }, [course, query]);
 
   const goToCourse = (key: CourseKey) => {
@@ -176,7 +194,7 @@ export default function Home() {
               <strong>{item.short}</strong>
               <h3>{item.name}</h3>
               <p>{item.description}</p>
-              <span className="card-footer"><span>{item.key === "ftw" ? "Semanas 1 a 8, 10 e 11 disponíveis" : "Semanas 1 a 11 disponíveis"}</span><i>→</i></span>
+              <span className="card-footer"><span>{item.key === "ftw" ? "Semanas 1 a 8, 10 a 12 disponíveis" : "Semanas 1 a 12 disponíveis"}</span><i>→</i></span>
             </button>
           ))}
         </div>
@@ -213,24 +231,31 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="release-note"><span>EM ANDAMENTO</span><p>{course.key === "ftw" ? "As Semanas 1 a 8, 10 e 11 estão disponíveis. A numeração segue o calendário atualizado de FTW." : "As Semanas 1 a 11 estão disponíveis. As próximas semanas serão publicadas gradualmente pela professora."}</p></div>
+        <div className="release-note"><span>EM ANDAMENTO</span><p>{course.key === "ftw" ? "As Semanas 1 a 8 e 10 a 12 estão disponíveis. A numeração segue o calendário atualizado de FTW." : "As Semanas 1 a 12 estão disponíveis. As próximas semanas serão publicadas gradualmente pela professora."}</p></div>
 
         <div className="weeks-meta"><span>{weeks.length} {weeks.length === 1 ? "semana encontrada" : "semanas"}</span><span>Selecione um card para abrir o conteúdo completo</span></div>
 
         {weeks.length > 0 ? (
           <div className="weeks-grid">
-            {weeks.map(({ week, topic }) => {
-              const image = week === 10 ? "/conteudos/imagens/Aviso%20Escolar_%20Bom%20Feriado%20a%20Todos!.png" : `/conteudos/${course.key}/${course.imagePath(week)}`;
-              const href = `/conteudos/${course.key}/${course.fileName(week)}`;
-              const available = course.key === "ftw" ? week <= 8 || week === 10 || week === 11 : week <= 11;
+            {weeks.map(({ week, topic, part, fileName, imagePath }) => {
+              const image = imagePath
+                ? `/conteudos/${course.key}/${imagePath}`
+                : course.key === "fbd" && week === 12
+                  ? "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1400&auto=format&fit=crop"
+                  : week === 10
+                    ? "/conteudos/imagens/Aviso%20Escolar_%20Bom%20Feriado%20a%20Todos!.png"
+                    : `/conteudos/${course.key}/${course.imagePath(week)}`;
+              const href = `/conteudos/${course.key}/${fileName || course.fileName(week)}`;
+              const available = course.key === "ftw" ? week <= 8 || (week >= 10 && week <= 12) : week <= 12;
+              const label = `SEMANA ${String(week).padStart(2, "0")}${part ? ` · PARTE ${part}` : ""}`;
               return available ? (
-                <a className="week-card" href={href} target="_blank" rel="noreferrer" key={`${course.key}-${week}`}>
-                  <div className="week-image"><img src={image} alt="" loading="lazy" /><span>SEMANA {String(week).padStart(2, "0")}</span></div>
+                <a className="week-card" href={href} target="_blank" rel="noreferrer" key={`${course.key}-${week}-${part || 1}`}>
+                  <div className="week-image"><img src={image} alt="" loading="lazy" /><span>{label}</span></div>
                   <div className="week-content"><h3>{topic}</h3><span className="open-label">Abrir conteúdo <i>↗</i></span></div>
                 </a>
               ) : (
-                <div className="week-card locked" aria-disabled="true" key={`${course.key}-${week}`}>
-                  <div className="week-image"><img src={image} alt="" loading="lazy" /><span>SEMANA {String(week).padStart(2, "0")}</span><b>EM BREVE</b></div>
+                <div className="week-card locked" aria-disabled="true" key={`${course.key}-${week}-${part || 1}`}>
+                  <div className="week-image"><img src={image} alt="" loading="lazy" /><span>{label}</span><b>EM BREVE</b></div>
                 </div>
               );
             })}
