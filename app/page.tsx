@@ -32,6 +32,7 @@ const topics: Record<CourseKey, string[]> = {
     "Feriado e recesso — não haverá aula",
     "Transformação ER → Relacional",
     "Introdução à SQL e Estrutura de Bancos de Dados",
+    "Introdução à SQL e Estrutura de Bancos de Dados",
   ],
   ftw: [
     "Apresentação da disciplina e fundamentos da Web",
@@ -45,6 +46,7 @@ const topics: Record<CourseKey, string[]> = {
     "",
     "Feriado e recesso — não haverá aula",
     "Links externos: conectando a Web",
+    "Trabalhando com Frames no HTML",
     "Trabalhando com Frames no HTML",
   ],
   bda: [
@@ -60,6 +62,7 @@ const topics: Record<CourseKey, string[]> = {
     "Feriado e recesso — não haverá aula",
     "Junção Externa (OUTER JOIN)",
     "Junção Externa (OUTER JOIN)",
+    "Consultas SQL Avançadas",
   ],
 };
 
@@ -78,7 +81,7 @@ const courses: Course[] = [
     key: "ftw", short: "FTW", name: "Fundamentos de Tecnologia Web", eyebrow: "Construir",
     description: "Uma jornada prática pelos fundamentos da web e pela construção de páginas com HTML.",
     topics: topics.ftw,
-    imagePath: (week) => week === 1 ? "imagens_semanas/semana1/semana1.png" : week === 7 ? "imagens_semanas/semana8.png" : week === 8 ? "imagens_semanas/semana9.png" : `imagens_semanas/semana${week}.${week === 3 ? "webp" : "png"}`,
+    imagePath: (week) => week === 1 ? "imagens_semanas/semana1/semana1.png" : week === 7 ? "imagens_semanas/semana8.png" : week === 8 ? "imagens_semanas/semana9.png" : week === 12 ? "imagens_semanas/semana13.png" : week === 13 ? "imagens_semanas/semana14.png" : `imagens_semanas/semana${week}.${week === 3 ? "webp" : "png"}`,
     fileName: (week) => `semana${week}_FTW.html`,
     teachingPlan: "https://drive.google.com/file/d/1Qv5JZes4qLRUJm32dwgxTimgkUUyF143/view?usp=sharing",
     lessonPlan: "https://htmlpreview.github.io/?https://github.com/miriacoelho/Programacao-das-aulas-2026_2/blob/master/index.html",
@@ -194,7 +197,7 @@ export default function Home() {
               <strong>{item.short}</strong>
               <h3>{item.name}</h3>
               <p>{item.description}</p>
-              <span className="card-footer"><span>{item.key === "ftw" ? "Semanas 1 a 8, 10 a 12 disponíveis" : "Semanas 1 a 12 disponíveis"}</span><i>→</i></span>
+              <span className="card-footer"><span>{item.key === "ftw" ? "Semanas 1 a 8, 10 a 13 disponíveis" : "Semanas 1 a 13 disponíveis"}</span><i>→</i></span>
             </button>
           ))}
         </div>
@@ -231,7 +234,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="release-note"><span>EM ANDAMENTO</span><p>{course.key === "ftw" ? "As Semanas 1 a 8 e 10 a 12 estão disponíveis. A numeração segue o calendário atualizado de FTW." : "As Semanas 1 a 12 estão disponíveis. As próximas semanas serão publicadas gradualmente pela professora."}</p></div>
+        <div className="release-note"><span>EM ANDAMENTO</span><p>{course.key === "ftw" ? "As Semanas 1 a 8 e 10 a 13 estão disponíveis. A numeração segue o calendário atualizado de FTW." : "As Semanas 1 a 13 estão disponíveis. As próximas semanas serão publicadas gradualmente pela professora."}</p></div>
 
         <div className="weeks-meta"><span>{weeks.length} {weeks.length === 1 ? "semana encontrada" : "semanas"}</span><span>Selecione um card para abrir o conteúdo completo</span></div>
 
@@ -240,13 +243,13 @@ export default function Home() {
             {weeks.map(({ week, topic, part, fileName, imagePath }) => {
               const image = imagePath
                 ? `/conteudos/${course.key}/${imagePath}`
-                : course.key === "fbd" && week === 12
+                : course.key === "fbd" && (week === 12 || week === 13)
                   ? "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1400&auto=format&fit=crop"
                   : week === 10
                     ? "/conteudos/imagens/Aviso%20Escolar_%20Bom%20Feriado%20a%20Todos!.png"
                     : `/conteudos/${course.key}/${course.imagePath(week)}`;
               const href = `/conteudos/${course.key}/${fileName || course.fileName(week)}`;
-              const available = course.key === "ftw" ? week <= 8 || (week >= 10 && week <= 12) : week <= 12;
+              const available = course.key === "ftw" ? week <= 8 || (week >= 10 && week <= 13) : week <= 13;
               const label = `SEMANA ${String(week).padStart(2, "0")}${part ? ` · PARTE ${part}` : ""}`;
               return available ? (
                 <a className="week-card" href={href} target="_blank" rel="noreferrer" key={`${course.key}-${week}-${part || 1}`}>
