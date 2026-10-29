@@ -71,7 +71,7 @@ const courses: Course[] = [
     key: "fbd", short: "FBD", name: "Fundamentos de Banco de Dados", eyebrow: "Estruturar",
     description: "Da compreensão dos dados ao projeto conceitual, relacional e à linguagem SQL.",
     topics: topics.fbd,
-    imagePath: (week) => week === 1 ? "imagens_semanas/semana1/semana1.png" : week === 2 ? "imagens_semanas/semana2_FBD.png" : week === 11 ? "imagens_semanas/semana12.png" : `imagens_semanas/semana${week}.${week === 8 ? "jpg" : "png"}`,
+    imagePath: (week) => week === 1 ? "imagens_semanas/semana1/semana1.png" : week === 2 ? "imagens_semanas/semana2_FBD.png" : week === 11 ? "imagens_semanas/semana12.png" : week === 12 ? "imagens_semanas/semana14.png" : week === 13 ? "imagens_semanas/semana15.png" : `imagens_semanas/semana${week}.${week === 8 ? "jpg" : "png"}`,
     fileName: (week) => `semana${week}_FBD.html`,
     teachingPlan: "https://drive.google.com/file/d/1beyevQXFKXc74sWogfu6L36Y4dj1L5ih/view?usp=sharing",
     lessonPlan: "https://htmlpreview.github.io/?https://github.com/miriacoelho/Programacao-das-aulas-2026_2/blob/master/index.html",
@@ -243,9 +243,7 @@ export default function Home() {
             {weeks.map(({ week, topic, part, fileName, imagePath }) => {
               const image = imagePath
                 ? `/conteudos/${course.key}/${imagePath}`
-                : course.key === "fbd" && (week === 12 || week === 13)
-                  ? "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1400&auto=format&fit=crop"
-                  : week === 10
+                : week === 10
                     ? "/conteudos/imagens/Aviso%20Escolar_%20Bom%20Feriado%20a%20Todos!.png"
                     : `/conteudos/${course.key}/${course.imagePath(week)}`;
               const href = `/conteudos/${course.key}/${fileName || course.fileName(week)}`;
