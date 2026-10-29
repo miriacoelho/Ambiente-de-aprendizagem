@@ -123,7 +123,7 @@ export default function Home() {
       }
       if (course.key === "bda" && week === 12) {
         return [
-          { ...card, part: 1, imagePath: "imagens_semanas/semana11.gif" },
+          { ...card, part: 1, imagePath: "imagens_semanas/semana12.png" },
           { week, part: 2, topic: "Revisão: consultas com junções", fileName: "semana12_2_BDA.html", imagePath: "imagens_semanas/semana12_2.png" },
         ];
       }
